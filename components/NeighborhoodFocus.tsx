@@ -1,0 +1,93 @@
+'use client';
+
+import { Shield, Home, TrendingUp } from 'lucide-react';
+
+export function NeighborhoodFocus() {
+  return (
+    <div className="bg-gradient-to-br from-[#0F172A] to-slate-900 rounded-2xl p-8 sm:p-12 text-white shadow-2xl">
+      <div className="text-center mb-10">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+          <span className="text-[#C5A059]">Mystic Bay</span> Spotlight
+        </h2>
+        <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+          The premier gated community in Green Valley Ranch, where luxury meets exclusivity
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+        {/* Stat 1: Gated Security */}
+        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+          <div className="flex items-center justify-center w-12 h-12 bg-[#C5A059] rounded-lg mb-4">
+            <Shield className="w-6 h-6 text-[#0F172A]" />
+          </div>
+          <h3 className="text-xl font-semibold mb-2">Gated Security</h3>
+          <p className="text-slate-300 text-sm leading-relaxed">
+            24/7 gated access and security services ensure privacy and peace of mind for all residents.
+          </p>
+        </div>
+
+        {/* Stat 2: Luxury Appeal */}
+        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+          <div className="flex items-center justify-center w-12 h-12 bg-[#C5A059] rounded-lg mb-4">
+            <Home className="w-6 h-6 text-[#0F172A]" />
+          </div>
+          <h3 className="text-xl font-semibold mb-2">Luxury Living</h3>
+          <p className="text-slate-300 text-sm leading-relaxed">
+            Premium homes featuring upscale finishes, spacious floor plans, and meticulously maintained landscapes.
+          </p>
+        </div>
+
+        {/* Stat 3: Market Value */}
+        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+          <div className="flex items-center justify-center w-12 h-12 bg-[#C5A059] rounded-lg mb-4">
+            <TrendingUp className="w-6 h-6 text-[#0F172A]" />
+          </div>
+          <h3 className="text-xl font-semibold mb-2">Strong Market Position</h3>
+          <p className="text-slate-300 text-sm leading-relaxed">
+            Consistently outperforms surrounding areas with premium pricing and faster time-to-sale.
+          </p>
+        </div>
+      </div>
+
+      {/* Additional Neighborhood Info */}
+      <div className="mt-10 pt-10 border-t border-white/20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h3 className="text-xl font-semibold mb-4 text-[#C5A059]">Prime Location</h3>
+            <ul className="space-y-2 text-slate-300">
+              <li className="flex items-start">
+                <span className="text-[#C5A059] mr-2">•</span>
+                <span>Walking distance to The District at Green Valley Ranch</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#C5A059] mr-2">•</span>
+                <span>Minutes from top-rated schools (Vanderburg & Glen Taylor Elementary)</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#C5A059] mr-2">•</span>
+                <span>Easy access to I-215 and Las Vegas Strip</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold mb-4 text-[#C5A059]">Community Features</h3>
+            <ul className="space-y-2 text-slate-300">
+              <li className="flex items-start">
+                <span className="text-[#C5A059] mr-2">•</span>
+                <span>Exclusive access to community amenities</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#C5A059] mr-2">•</span>
+                <span>Well-maintained common areas and landscaping</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#C5A059] mr-2">•</span>
+                <span>Active homeowners association</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

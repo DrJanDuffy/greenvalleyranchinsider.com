@@ -25,7 +25,8 @@ export const workflowInbound = async (data: FormSchema) => {
 
   if (
     qualification.category === 'QUALIFIED' ||
-    qualification.category === 'FOLLOW_UP'
+    qualification.category === 'FOLLOW_UP' ||
+    qualification.category === 'HIGH_PRIORITY_SELLER'
   ) {
     const email = await stepWriteEmail(research, qualification);
     await stepHumanFeedback(research, email, qualification);

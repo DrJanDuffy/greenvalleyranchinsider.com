@@ -16,17 +16,38 @@ import { exa } from '@/lib/exa';
 
 /**
  * Qualify the lead
+ * Special logic: If address contains "Mystic Bay" or zip is "89052", mark as HIGH_PRIORITY_SELLER
  */
 export async function qualify(
   lead: FormSchema,
   research: string
 ): Promise<QualificationSchema> {
+  // Check for Mystic Bay address or 89052 zip code in message/address field
+  const addressField = lead.message || lead.company || '';
+  const containsMysticBay = addressField.toLowerCase().includes('mystic bay');
+  const contains89052 = addressField.includes('89052') || lead.message?.includes('89052');
+  
+  // If high priority criteria met, automatically categorize
+  if (containsMysticBay || contains89052) {
+    return {
+      category: 'HIGH_PRIORITY_SELLER',
+      reason: `High-priority seller identified: ${containsMysticBay ? 'Mystic Bay resident' : ''} ${contains89052 ? '89052 zip code' : ''}. Premium neighborhood with luxury appeal.`
+    };
+  }
+
   const { object } = await generateObject({
     model: 'openai/gpt-5',
     schema: qualificationSchema,
     prompt: `Qualify the lead and give a reason for the qualification based on the following information: LEAD DATA: ${JSON.stringify(
       lead
-    )} and RESEARCH: ${research}`
+    )} and RESEARCH: ${research}
+
+    Pay special attention to:
+    - Addresses in Mystic Bay, The Cottages, or GVR Estates
+    - Zip code 89052 (Green Valley Ranch, Henderson NV)
+    - Seller intent or home valuation requests
+    - Proximity to The District at Green Valley Ranch
+    `
   });
 
   return object;
@@ -57,7 +78,13 @@ export async function humanFeedback(
   email: string,
   qualification: QualificationSchema
 ) {
-  const message = `*New Lead Qualification*\n\n*Email:* ${email}\n*Category:* ${
+  const isHighPriority = qualification.category === 'HIGH_PRIORITY_SELLER';
+  const priorityEmoji = isHighPriority ? '🚨' : '📧';
+  const priorityAlert = isHighPriority 
+    ? '\n\n🚨 *HOT LEAD: Mystic Bay Homeowner Researching Value* 🚨\n' 
+    : '';
+  
+  const message = `${priorityEmoji} *New Lead Qualification*${priorityAlert}\n\n*Email:* ${email}\n*Category:* ${
     qualification.category
   }\n*Reason:* ${qualification.reason}\n\n*Research:*\n${research.slice(
     0,
@@ -197,24 +224,35 @@ const queryKnowledgeBase = tool({
 export const researchAgent = new Agent({
   model: 'openai/gpt-5',
   system: `
-  You are a researcher to find information about a lead. You are given a lead and you need to find information about the lead.
+  You are a real estate research specialist focused on Green Valley Ranch, Henderson NV (zip code 89052). You research leads to provide comprehensive property and market insights.
+  
+  When researching a lead, you MUST specifically look for:
+  1. Proximity to The District at Green Valley Ranch (shopping/dining center)
+  2. Recent sales trends in the Henderson, NV 89052 market (last 90 days)
+  3. School ratings for Vanderburg Elementary and Glen Taylor Elementary
+  4. Neighborhood-specific details for Mystic Bay, The Cottages, or GVR Estates
+  5. Home values, market comparisons, and luxury features
+  6. Local amenities, gated community features, and lifestyle benefits
   
   You can use the tools provided to you to find information about the lead: 
   - search: Searches the web for information
   - queryKnowledgeBase: Queries the knowledge base for the given query
   - fetchUrl: Fetches the contents of a public URL
   - crmSearch: Searches the CRM for the given company name
-  - techStackAnalysis: Analyzes the tech stack of the given domain
   
-  Synthesize the information you find into a comprehensive report.
+  Synthesize the information you find into a comprehensive report focusing on:
+  - Property value and equity potential
+  - Market positioning and competitive advantages
+  - Local school district information
+  - Lifestyle and amenity highlights
+  - Recent comparable sales in the area
   `,
   tools: {
     search,
     queryKnowledgeBase,
     fetchUrl,
-    crmSearch,
-    techStackAnalysis
-    // add other tools here
+    crmSearch
+    // Removed techStackAnalysis as it's not relevant for real estate leads
   },
   stopWhen: [stepCountIs(20)] // stop after max 20 steps
 });
