@@ -122,7 +122,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Dr. Jan Duffy */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
+      <section id="why-choose" className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4 text-center">
             Why Choose Dr. Jan Duffy?

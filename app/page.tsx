@@ -8,6 +8,7 @@ import { RealScoutAdvancedSearch } from '@/components/RealScoutAdvancedSearch';
 import { RealScoutOfficeListings } from '@/components/RealScoutOfficeListings';
 import { NewsletterSignup } from '@/components/NewsletterSignup';
 import { HowIHelp } from '@/components/HowIHelp';
+import { WhyChooseReasons } from '@/components/WhyChooseReasons';
 
 export default function Home() {
   return (
@@ -83,6 +84,9 @@ export default function Home() {
 
       {/* Stats Section */}
       <StatsSection />
+
+      {/* Why Choose Dr. Jan Duffy - Condensed */}
+      <WhyChooseReasons variant="condensed" showCTA={true} />
 
       {/* Testimonials Section */}
       <Testimonials />

@@ -3,6 +3,7 @@ import { Search, Home, FileText, Shield, TrendingUp, MapPin, Phone, Mail } from 
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import Link from 'next/link';
 import { RealScoutOfficeListings } from '@/components/RealScoutOfficeListings';
+import { WhyChooseReasons } from '@/components/WhyChooseReasons';
 
 export const metadata: Metadata = {
   title: 'Buyer\'s Guide | Green Valley Ranch Insider | Henderson NV Home Buying',

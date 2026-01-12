@@ -3,6 +3,7 @@ import { Phone, Mail, MapPin, Clock, MessageSquare } from 'lucide-react';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { ValuationForm } from '@/components/ValuationForm';
 import { RealScoutOfficeListings } from '@/components/RealScoutOfficeListings';
+import { WhyChooseReasons } from '@/components/WhyChooseReasons';
 
 export const metadata: Metadata = {
   title: 'Contact Dr. Jan Duffy | Green Valley Ranch Insider | Henderson NV Real Estate',
@@ -139,8 +140,11 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Why Choose Dr. Jan Duffy - Condensed */}
+      <WhyChooseReasons variant="condensed" showCTA={true} />
+
       {/* Quick Actions */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-[#0F172A] mb-8 text-center">
             Quick Actions
