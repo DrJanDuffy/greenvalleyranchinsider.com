@@ -2,7 +2,6 @@ import { Home as HomeIcon, TrendingUp, MapPin } from 'lucide-react';
 import { NeighborhoodFocus } from '@/components/NeighborhoodFocus';
 import { MobileStickyCTA } from '@/components/MobileStickyCTA';
 import { Testimonials } from '@/components/Testimonials';
-import { StatsSection } from '@/components/StatsSection';
 import { RealScoutWidget } from '@/components/RealScoutWidget';
 import { RealScoutAdvancedSearch } from '@/components/RealScoutAdvancedSearch';
 import { RealScoutOfficeListings } from '@/components/RealScoutOfficeListings';
