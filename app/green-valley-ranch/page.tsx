@@ -8,10 +8,14 @@ export const metadata: Metadata = {
   title: 'Green Valley Ranch Henderson NV | Master-Planned Community Guide | Green Valley Ranch Insider',
   description: 'Green Valley Ranch is a well-established master-planned community in Henderson, NV with over a dozen gated and public communities. Features The District shopping center, top-rated schools, and luxury amenities.',
   keywords: ['Green Valley Ranch Henderson', 'Green Valley Ranch neighborhood', 'Henderson master-planned community', 'The District Green Valley Ranch', 'Green Valley Ranch Resort', 'Henderson Nevada neighborhoods'],
+  alternates: {
+    canonical: 'https://greenvalleyranchinsider.com/green-valley-ranch',
+  },
   openGraph: {
     title: 'Green Valley Ranch Henderson NV | Master-Planned Community Guide',
     description: 'A well-established master-planned community offering suburban tranquility and urban amenities.',
     type: 'website',
+    url: 'https://greenvalleyranchinsider.com/green-valley-ranch',
   },
 };
 

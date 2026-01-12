@@ -8,10 +8,14 @@ export const metadata: Metadata = {
   title: 'The Cottages at Green Valley Ranch | Henderson NV | Green Valley Ranch Insider',
   description: 'The Cottages at Green Valley Ranch is a gated subdivision in Henderson, NV built by Pacific Homes. Featuring compact, efficient floor plans from 1,500 to 1,900 sq. ft. within the Green Valley Ranch master-planned community.',
   keywords: ['The Cottages Green Valley Ranch', 'The Cottages Henderson NV', 'Pacific Homes Henderson', 'Green Valley Ranch gated community', 'Henderson Nevada neighborhoods', 'compact homes Henderson'],
+  alternates: {
+    canonical: 'https://greenvalleyranchinsider.com/the-cottages',
+  },
   openGraph: {
     title: 'The Cottages at Green Valley Ranch | Henderson NV',
     description: 'A gated subdivision built by Pacific Homes with compact, efficient homes ranging from 1,500 to 1,900 sq. ft.',
     type: 'website',
+    url: 'https://greenvalleyranchinsider.com/the-cottages',
   },
 };
 

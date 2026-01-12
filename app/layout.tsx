@@ -8,15 +8,20 @@ import { Header } from '@/components/Header';
 import { StructuredData } from '@/components/StructuredData';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import { SkipToContent } from '@/components/SkipToContent';
+import { ClientPerformance } from '@/components/ClientPerformance';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
-  subsets: ['latin']
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
 });
 
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
-  subsets: ['latin']
+  subsets: ['latin'],
+  display: 'swap',
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -73,6 +78,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Resource Hints */}
+        <link rel="preconnect" href="https://em.realscout.com" />
+        <link rel="dns-prefetch" href="https://em.realscout.com" />
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <>
+            <link rel="preconnect" href="https://www.googletagmanager.com" />
+            <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+          </>
+        )}
         {/* RealScout Widget Styles */}
         <style dangerouslySetInnerHTML={{
           __html: `
@@ -128,6 +142,7 @@ export default function RootLayout({
         <StructuredData type="WebSite" />
         <StructuredData type="RealEstateAgent" />
         <StructuredData type="LocalBusiness" />
+        <ClientPerformance />
         <SkipToContent />
         <Header />
         <main id="main-content" className="flex-1">

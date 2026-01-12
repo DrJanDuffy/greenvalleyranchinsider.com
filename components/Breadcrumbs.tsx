@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { ChevronRight, Home } from 'lucide-react';
+import { BreadcrumbStructuredData } from './BreadcrumbStructuredData';
 
 type BreadcrumbItem = {
   label: string;
@@ -14,7 +15,9 @@ type BreadcrumbsProps = {
 
 export function Breadcrumbs({ items }: BreadcrumbsProps) {
   return (
-    <nav className="flex items-center space-x-2 text-sm text-slate-600 mb-6" aria-label="Breadcrumb">
+    <>
+      <BreadcrumbStructuredData items={items} />
+      <nav className="flex items-center space-x-2 text-sm text-slate-600 mb-6" aria-label="Breadcrumb">
       <Link
         href="/"
         className="flex items-center hover:text-[#C5A059] transition-colors"
@@ -44,6 +47,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
           </div>
         );
       })}
-    </nav>
+      </nav>
+    </>
   );
 }

@@ -8,6 +8,15 @@ export const metadata: Metadata = {
   title: 'Frequently Asked Questions | Green Valley Ranch Insider',
   description: 'Common questions about selling your home in Green Valley Ranch, Mystic Bay, and The Cottages. Get answers about home valuations, market trends, and the selling process.',
   keywords: ['Green Valley Ranch FAQ', 'Henderson real estate questions', 'selling home FAQ', 'home valuation questions'],
+  alternates: {
+    canonical: 'https://greenvalleyranchinsider.com/faq',
+  },
+  openGraph: {
+    title: 'Frequently Asked Questions | Green Valley Ranch Insider',
+    description: 'Common questions about selling your home in Green Valley Ranch, Mystic Bay, and The Cottages.',
+    type: 'website',
+    url: 'https://greenvalleyranchinsider.com/faq',
+  },
 };
 
 const faqs = [

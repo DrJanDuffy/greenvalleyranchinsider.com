@@ -8,6 +8,15 @@ export const metadata: Metadata = {
   title: 'Contact Dr. Jan Duffy | Green Valley Ranch Insider | Henderson NV Real Estate',
   description: 'Contact Dr. Jan Duffy for expert real estate services in Green Valley Ranch, Mystic Bay, and The Cottages. Call (702) 500-1955 or visit our Henderson office.',
   keywords: ['contact real estate agent Henderson', 'Dr. Jan Duffy contact', 'Green Valley Ranch real estate', 'Henderson NV realtor'],
+  alternates: {
+    canonical: 'https://greenvalleyranchinsider.com/contact',
+  },
+  openGraph: {
+    title: 'Contact Dr. Jan Duffy | Green Valley Ranch Insider',
+    description: 'Contact Dr. Jan Duffy for expert real estate services in Green Valley Ranch, Mystic Bay, and The Cottages.',
+    type: 'website',
+    url: 'https://greenvalleyranchinsider.com/contact',
+  },
 };
 
 export default function ContactPage() {

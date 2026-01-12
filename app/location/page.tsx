@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   title: 'Office Location | 360 Mike Koizumi Way, Henderson NV | Green Valley Ranch Insider',
   description: 'Visit our office at 360 Mike Koizumi Way in Henderson, Nevada. Conveniently located in Green Valley near The District at Green Valley Ranch.',
   keywords: ['office location', 'Henderson NV real estate office', '360 Mike Koizumi Way', 'Berkshire Hathaway Henderson', 'Green Valley Ranch office'],
+  alternates: {
+    canonical: 'https://greenvalleyranchinsider.com/location',
+  },
+  openGraph: {
+    title: 'Office Location | 360 Mike Koizumi Way, Henderson NV',
+    description: 'Visit our office at 360 Mike Koizumi Way in Henderson, Nevada. Conveniently located in Green Valley near The District at Green Valley Ranch.',
+    type: 'website',
+    url: 'https://greenvalleyranchinsider.com/location',
+  },
 };
 
 async function getLocationData() {
