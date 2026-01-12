@@ -14,7 +14,7 @@ export function Header() {
     { name: 'Green Valley Ranch', href: '/green-valley-ranch' },
     { name: 'Services', href: '/services' },
     { name: 'Resources', href: '/resources' },
-    { name: 'About', href: '/about' },
+    { name: 'About', href: '/about#why-choose' },
     { name: 'Contact', href: '/contact' },
   ];
 
