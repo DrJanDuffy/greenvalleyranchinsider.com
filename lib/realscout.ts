@@ -31,16 +31,42 @@ export function loadRealScoutScript(): Promise<void> {
     
     if (existingScript) {
       // Script exists, check if it's loaded
-      // Use type assertion for readyState (legacy property, not in TypeScript types)
+      // readyState is a legacy property, check safely
       const scriptElement = existingScript as HTMLScriptElement & { readyState?: string };
-      if (scriptElement.readyState === 'complete' || scriptElement.readyState === 'loaded') {
+      const readyState = scriptElement.readyState;
+      if (readyState === 'complete' || readyState === 'loaded') {
         resolve();
         return;
       }
       
-      // Wait for existing script to load
-      existingScript.addEventListener('load', () => resolve());
-      existingScript.addEventListener('error', () => reject(new Error('Failed to load RealScout script')));
+      // If readyState not available or not loaded, wait for load event
+      // Check if script is already loaded by checking if it has a src and is in the DOM
+      if (scriptElement.src && scriptElement.parentNode) {
+        // Script is in DOM, wait for load event or check after a short delay
+        const checkLoaded = () => {
+          if (customElements.get('realscout-home-value') || customElements.get('realscout-office-listings')) {
+            resolve();
+          }
+        };
+        
+        // Check immediately
+        checkLoaded();
+        
+        // Also listen for load event
+        existingScript.addEventListener('load', () => resolve());
+        existingScript.addEventListener('error', () => reject(new Error('Failed to load RealScout script')));
+        
+        // Fallback: resolve after short delay if script is in DOM
+        setTimeout(() => {
+          if (scriptElement.parentNode) {
+            resolve();
+          }
+        }, 100);
+      } else {
+        // Wait for existing script to load
+        existingScript.addEventListener('load', () => resolve());
+        existingScript.addEventListener('error', () => reject(new Error('Failed to load RealScout script')));
+      }
       return;
     }
 
