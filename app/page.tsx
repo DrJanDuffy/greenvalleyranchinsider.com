@@ -63,6 +63,23 @@ export default function Home() {
         </div>
       </section>
 
+      {/* RealScout Home Value Widget Section - Moved to position 2 */}
+      <section id="valuation-form" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-2xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4">
+              What&apos;s my home worth?
+            </h2>
+            <p className="text-lg text-slate-600">
+              Get a free home value estimate instantly
+            </p>
+          </div>
+          <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6 sm:p-8">
+            <RealScoutWidget />
+          </div>
+        </div>
+      </section>
+
       {/* RealScout Advanced Search Widget */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
@@ -89,23 +106,6 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <Testimonials />
-
-      {/* RealScout Home Value Widget Section */}
-      <section id="valuation-form" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4">
-              What&apos;s my home worth?
-            </h2>
-            <p className="text-lg text-slate-600">
-              Get a free home value estimate instantly
-            </p>
-          </div>
-          <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6 sm:p-8">
-            <RealScoutWidget />
-          </div>
-        </div>
-      </section>
 
       {/* Office Listings Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
