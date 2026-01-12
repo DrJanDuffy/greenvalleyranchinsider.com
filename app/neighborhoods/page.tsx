@@ -3,6 +3,7 @@ import { MapPin, Home, Shield, TrendingUp, Users, Building, Link as LinkIcon } f
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import Link from 'next/link';
 import { RealScoutOfficeListings } from '@/components/RealScoutOfficeListings';
+import { WhyChooseReasons } from '@/components/WhyChooseReasons';
 
 export const metadata: Metadata = {
   title: 'Neighborhoods | Green Valley Ranch Insider | Henderson NV Communities',
