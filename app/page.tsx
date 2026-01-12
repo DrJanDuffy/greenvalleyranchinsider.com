@@ -4,7 +4,7 @@ import { MobileStickyCTA } from '@/components/MobileStickyCTA';
 import { Testimonials } from '@/components/Testimonials';
 import { StatsSection } from '@/components/StatsSection';
 import { RealScoutWidget } from '@/components/RealScoutWidget';
-import { RealScoutSimpleSearch } from '@/components/RealScoutSimpleSearch';
+import { RealScoutAdvancedSearch } from '@/components/RealScoutAdvancedSearch';
 import { RealScoutOfficeListings } from '@/components/RealScoutOfficeListings';
 import { NewsletterSignup } from '@/components/NewsletterSignup';
 
@@ -59,12 +59,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* RealScout Simple Search Widget */}
+      {/* RealScout Advanced Search Widget */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col items-center">
             <div className="w-full max-w-[500px]">
-              <RealScoutSimpleSearch />
+              <RealScoutAdvancedSearch />
             </div>
           </div>
         </div>
