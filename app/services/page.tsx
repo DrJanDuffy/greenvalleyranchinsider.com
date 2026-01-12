@@ -4,6 +4,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs';
 import Link from 'next/link';
 import { RealScoutOfficeListings } from '@/components/RealScoutOfficeListings';
 import { HowIHelp } from '@/components/HowIHelp';
+import { WhyChooseReasons } from '@/components/WhyChooseReasons';
 
 export const metadata: Metadata = {
   title: 'Real Estate Services | Green Valley Ranch Insider | Henderson NV',
@@ -112,6 +113,9 @@ export default function ServicesPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <HowIHelp />
       </section>
+
+      {/* Why Choose Dr. Jan Duffy - Condensed */}
+      <WhyChooseReasons variant="condensed" showCTA={true} />
 
       {/* Office Listings */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
