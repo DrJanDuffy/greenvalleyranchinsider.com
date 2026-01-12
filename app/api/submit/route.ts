@@ -28,7 +28,10 @@ export async function POST(request: Request) {
       { status: 200 }
     );
   } catch (error) {
-    console.error('Error in submit route:', error);
+    // Log error for debugging (in production, use proper logging service)
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Error in submit route:', error);
+    }
     return Response.json(
       { error: 'Internal server error', message: 'Failed to process form submission' },
       { status: 500 }

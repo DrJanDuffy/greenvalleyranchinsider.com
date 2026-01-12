@@ -36,7 +36,10 @@ async function getLocationData() {
 
     return await response.json();
   } catch (error) {
-    console.error('Error fetching location data:', error);
+    // Log error for debugging
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Error fetching location data:', error);
+    }
     // Return fallback data if fetch fails
     return {
       address: {
