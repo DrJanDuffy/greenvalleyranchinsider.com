@@ -1,6 +1,6 @@
 'use client';
 
-import { Phone, Mail, MapPin, Award } from 'lucide-react';
+import { Phone, Mail, MapPin, Award, Navigation } from 'lucide-react';
 import Link from 'next/link';
 
 export function Footer() {
@@ -34,9 +34,7 @@ export function Footer() {
                 <span>DrDuffy@GreenValleyRanchInsider.com</span>
               </a>
               <a
-                href="https://www.google.com/maps/dir/?api=1&destination=360+Mike+Koizumi+Way,+Henderson,+NV+89011"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/location"
                 className="flex items-start gap-3 hover:text-[#C5A059] transition-colors"
               >
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
@@ -44,6 +42,15 @@ export function Footer() {
                   360 Mike Koizumi Way<br />
                   Henderson, NV 89011
                 </span>
+              </a>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=360+Mike+Koizumi+Way,+Henderson,+NV+89011"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 hover:text-[#C5A059] transition-colors text-sm text-slate-400 hover:text-[#C5A059]"
+              >
+                <Navigation className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                <span>Get Directions →</span>
               </a>
             </div>
           </div>
@@ -69,15 +76,28 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Service Area */}
+          {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-bold mb-4 text-[#C5A059]">Service Area</h3>
-            <div className="space-y-2 text-slate-300">
-              <p>Green Valley Ranch</p>
-              <p>Mystic Bay</p>
-              <p>The Cottages</p>
-              <p>GVR Estates</p>
-              <p>Henderson, NV 89052</p>
+            <h3 className="text-xl font-bold mb-4 text-[#C5A059]">Quick Links</h3>
+            <div className="space-y-2">
+              <Link href="/green-valley-ranch" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
+                Green Valley Ranch
+              </Link>
+              <Link href="/mystic-bay" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
+                Mystic Bay
+              </Link>
+              <Link href="/the-cottages" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
+                The Cottages
+              </Link>
+              <Link href="/location" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
+                Office Location
+              </Link>
+              <Link href="/contact" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
+                Contact Us
+              </Link>
+              <Link href="/faq" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
+                FAQ
+              </Link>
             </div>
           </div>
         </div>

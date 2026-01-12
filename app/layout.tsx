@@ -3,6 +3,10 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { Toaster } from 'sonner';
 import { Footer } from '@/components/Footer';
+import { Header } from '@/components/Header';
+import { StructuredData } from '@/components/StructuredData';
+import { ScrollToTop } from '@/components/ScrollToTop';
+import { SkipToContent } from '@/components/SkipToContent';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -49,10 +53,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
-        <div className="flex-1">
+        <StructuredData type="WebSite" />
+        <StructuredData type="RealEstateAgent" />
+        <StructuredData type="LocalBusiness" />
+        <SkipToContent />
+        <Header />
+        <main id="main-content" className="flex-1">
           {children}
-        </div>
+        </main>
         <Footer />
+        <ScrollToTop />
         <Toaster />
       </body>
     </html>

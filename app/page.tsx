@@ -1,7 +1,10 @@
 import { ValuationForm } from '@/components/ValuationForm';
-import { Home, TrendingUp, MapPin } from 'lucide-react';
+import { Home as HomeIcon, TrendingUp, MapPin } from 'lucide-react';
 import { NeighborhoodFocus } from '@/components/NeighborhoodFocus';
 import { MobileStickyCTA } from '@/components/MobileStickyCTA';
+import { Testimonials } from '@/components/Testimonials';
+import { PropertySearchWidget } from '@/components/PropertySearchWidget';
+import { StatsSection } from '@/components/StatsSection';
 
 export default function Home() {
   return (
@@ -10,7 +13,7 @@ export default function Home() {
       <section className="relative bg-[#0F172A] text-white py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <Home className="w-8 h-8 text-[#C5A059]" />
+            <HomeIcon className="w-8 h-8 text-[#C5A059]" />
             <TrendingUp className="w-8 h-8 text-[#C5A059]" />
             <MapPin className="w-8 h-8 text-[#C5A059]" />
           </div>
@@ -23,6 +26,19 @@ export default function Home() {
           <p className="text-xl sm:text-2xl text-slate-300 mb-8 max-w-2xl mx-auto">
             Expert insights and premium listing services for Mystic Bay, The Cottages, and the Green Valley Ranch community.
           </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-6 text-sm">
+            <a href="/green-valley-ranch" className="text-[#C5A059] hover:text-[#B8914F] hover:underline font-semibold">
+              Green Valley Ranch Guide →
+            </a>
+            <span className="text-slate-400">|</span>
+            <a href="/mystic-bay" className="text-[#C5A059] hover:text-[#B8914F] hover:underline">
+              Explore Mystic Bay →
+            </a>
+            <span className="text-slate-400">|</span>
+            <a href="/the-cottages" className="text-[#C5A059] hover:text-[#B8914F] hover:underline">
+              Explore The Cottages →
+            </a>
+          </div>
           
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
@@ -41,6 +57,13 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Property Search Widget */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <PropertySearchWidget />
+        </div>
+      </section>
+
       {/* Neighborhood Focus Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
@@ -48,8 +71,14 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Stats Section */}
+      <StatsSection />
+
+      {/* Testimonials Section */}
+      <Testimonials />
+
       {/* Valuation Form Section */}
-      <section id="valuation-form" className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
+      <section id="valuation-form" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4">
