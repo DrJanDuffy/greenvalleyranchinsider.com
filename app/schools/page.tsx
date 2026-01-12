@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { GraduationCap, Award, Book, Users, MapPin, Star, Link as LinkIcon } from 'lucide-react';
+import { GraduationCap, Award, Book, Users, MapPin, Star, Link as LinkIcon, TrendingUp } from 'lucide-react';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import Link from 'next/link';
 import { RealScoutOfficeListings } from '@/components/RealScoutOfficeListings';
