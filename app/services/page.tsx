@@ -3,6 +3,7 @@ import { Home, TrendingUp, Search, FileText, Camera, Users, BarChart, Shield, Ph
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import Link from 'next/link';
 import { RealScoutOfficeListings } from '@/components/RealScoutOfficeListings';
+import { HowIHelp } from '@/components/HowIHelp';
 
 export const metadata: Metadata = {
   title: 'Real Estate Services | Green Valley Ranch Insider | Henderson NV',
@@ -107,74 +108,9 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Seller Services */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4">
-              Services for Sellers
-            </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Everything you need to sell your Green Valley Ranch home for top dollar
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sellerServices.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <div
-                  key={index}
-                  className="bg-gradient-to-br from-slate-50 to-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="w-12 h-12 bg-[#C5A059] rounded-lg flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-[#0F172A]" />
-                  </div>
-                  <h3 className="text-xl font-bold text-[#0F172A] mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-slate-600 leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Buyer Services */}
+      {/* How I Help Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4">
-              Services for Buyers
-            </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Expert guidance to find your perfect home in Green Valley Ranch
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {buyerServices.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="w-12 h-12 bg-[#C5A059] rounded-lg flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-[#0F172A]" />
-                  </div>
-                  <h3 className="text-xl font-bold text-[#0F172A] mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-slate-600 leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        <HowIHelp />
       </section>
 
       {/* Office Listings */}

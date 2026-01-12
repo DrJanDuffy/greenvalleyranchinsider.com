@@ -7,6 +7,7 @@ import { RealScoutWidget } from '@/components/RealScoutWidget';
 import { RealScoutAdvancedSearch } from '@/components/RealScoutAdvancedSearch';
 import { RealScoutOfficeListings } from '@/components/RealScoutOfficeListings';
 import { NewsletterSignup } from '@/components/NewsletterSignup';
+import { HowIHelp } from '@/components/HowIHelp';
 
 export default function Home() {
   return (
@@ -68,6 +69,11 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* How I Help Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <HowIHelp />
       </section>
 
       {/* Neighborhood Focus Section */}
