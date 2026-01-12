@@ -31,7 +31,9 @@ export function loadRealScoutScript(): Promise<void> {
     
     if (existingScript) {
       // Script exists, check if it's loaded
-      if (existingScript.readyState === 'complete' || existingScript.readyState === 'loaded') {
+      // Use type assertion for readyState (legacy property, not in TypeScript types)
+      const scriptElement = existingScript as HTMLScriptElement & { readyState?: string };
+      if (scriptElement.readyState === 'complete' || scriptElement.readyState === 'loaded') {
         resolve();
         return;
       }
