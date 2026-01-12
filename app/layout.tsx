@@ -20,12 +20,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://greenvalleyranchinsider.com'),
   title: 'Green Valley Ranch Insider | Henderson NV Real Estate Authority',
   description: 'Expert insights and premium listing services for Mystic Bay, The Cottages, and the Green Valley Ranch community. Get your custom insider valuation today.',
   keywords: ['Green Valley Ranch', 'Henderson NV real estate', 'Mystic Bay', 'The Cottages', 'GVR Estates', 'home valuation', 'Henderson homes for sale', '89052', 'Dr. Jan Duffy'],
   authors: [{ name: 'Dr. Jan Duffy' }],
   creator: 'Dr. Jan Duffy',
   publisher: 'Green Valley Ranch Insider',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
+  },
   openGraph: {
     title: 'Green Valley Ranch Insider | Henderson NV Real Estate Authority',
     description: 'Expert insights and premium listing services for Mystic Bay, The Cottages, and the Green Valley Ranch community.',
@@ -93,6 +108,23 @@ export default function RootLayout({
           type="module"
           strategy="afterInteractive"
         />
+        {/* Google Analytics */}
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+              `}
+            </Script>
+          </>
+        )}
         <StructuredData type="WebSite" />
         <StructuredData type="RealEstateAgent" />
         <StructuredData type="LocalBusiness" />

@@ -6,6 +6,7 @@ import { StatsSection } from '@/components/StatsSection';
 import { RealScoutWidget } from '@/components/RealScoutWidget';
 import { RealScoutSimpleSearch } from '@/components/RealScoutSimpleSearch';
 import { RealScoutOfficeListings } from '@/components/RealScoutOfficeListings';
+import { NewsletterSignup } from '@/components/NewsletterSignup';
 
 export default function Home() {
   return (
@@ -111,6 +112,13 @@ export default function Home() {
             </p>
           </div>
           <RealScoutOfficeListings />
+        </div>
+      </section>
+
+      {/* Newsletter Signup Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-2xl mx-auto">
+          <NewsletterSignup />
         </div>
       </section>
 
