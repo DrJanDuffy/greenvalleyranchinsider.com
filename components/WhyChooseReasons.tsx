@@ -125,9 +125,9 @@ export function WhyChooseReasons({
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {sections.slice(0, 6).flatMap(section => 
-              section.items.slice(0, 4).map((item, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+            {sections.slice(0, 3).flatMap(section => 
+              section.items.slice(0, 2).map((item, index) => (
                 <div
                   key={`${section.title}-${index}`}
                   className="bg-white rounded-lg p-4 border border-slate-200 hover:border-[#C5A059] transition-colors"
