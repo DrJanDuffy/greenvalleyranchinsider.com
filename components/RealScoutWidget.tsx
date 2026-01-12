@@ -1,23 +1,10 @@
 'use client';
 
-import { useEffect } from 'react';
-
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'realscout-home-value': React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement> & {
-          'agent-encoded-id'?: string;
-          'include-name'?: boolean;
-          'include-phone'?: boolean;
-        },
-        HTMLElement
-      >;
-    }
-  }
-}
+import { useEffect, useRef } from 'react';
 
 export function RealScoutWidget() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     // Ensure the script is loaded
     if (typeof window !== 'undefined' && !document.querySelector('script[src*="realscout-web-components"]')) {
@@ -26,13 +13,16 @@ export function RealScoutWidget() {
       script.type = 'module';
       document.head.appendChild(script);
     }
+
+    // Create the custom element after script loads
+    if (containerRef.current && !containerRef.current.querySelector('realscout-home-value')) {
+      const widget = document.createElement('realscout-home-value');
+      widget.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw');
+      widget.setAttribute('include-name', '');
+      widget.setAttribute('include-phone', '');
+      containerRef.current.appendChild(widget);
+    }
   }, []);
 
-  return (
-    <realscout-home-value 
-      agent-encoded-id="QWdlbnQtMjI1MDUw" 
-      include-name 
-      include-phone
-    />
-  );
+  return <div ref={containerRef} />;
 }
