@@ -63,7 +63,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* RealScout Home Value Widget Section - Moved to position 2 */}
+      {/* Office Listings Section - Moved to top position */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4">
+              Featured Listings
+            </h2>
+            <p className="text-lg text-slate-600">
+              Explore available properties in Henderson and Las Vegas
+            </p>
+          </div>
+          <RealScoutOfficeListings />
+        </div>
+      </section>
+
+      {/* RealScout Home Value Widget Section */}
       <section id="valuation-form" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-10">
@@ -106,21 +121,6 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <Testimonials />
-
-      {/* Office Listings Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4">
-              Featured Listings
-            </h2>
-            <p className="text-lg text-slate-600">
-              Explore available properties in Henderson and Las Vegas
-            </p>
-          </div>
-          <RealScoutOfficeListings />
-        </div>
-      </section>
 
       {/* Recently Sold Listings Section */}
       <RealScoutSoldListings 
