@@ -9,6 +9,10 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   // SEO: Generate static pages for better indexing
   output: 'standalone',
+  // Performance optimizations
+  experimental: {
+    optimizePackageImports: ['lucide-react', '@radix-ui/react-label', '@radix-ui/react-separator'],
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
