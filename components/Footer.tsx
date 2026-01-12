@@ -122,6 +122,15 @@ export function Footer() {
               <Link href="/area-guide" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
                 Area Guide
               </Link>
+              <Link href="/moving-guide" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
+                Moving Guide
+              </Link>
+              <Link href="/financing-guide" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
+                Financing Guide
+              </Link>
+              <Link href="/home-staging" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
+                Home Staging
+              </Link>
             </div>
           </div>
         </div>
@@ -200,6 +209,14 @@ export function Footer() {
           <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs">
             <Link href="/privacy" className="text-slate-400 hover:text-[#C5A059] transition-colors">
               Privacy Policy
+            </Link>
+            <span className="text-slate-600">|</span>
+            <Link href="/terms" className="text-slate-400 hover:text-[#C5A059] transition-colors">
+              Terms of Service
+            </Link>
+            <span className="text-slate-600">|</span>
+            <Link href="/disclaimer" className="text-slate-400 hover:text-[#C5A059] transition-colors">
+              Disclaimer
             </Link>
             <span className="text-slate-600">|</span>
             <a
