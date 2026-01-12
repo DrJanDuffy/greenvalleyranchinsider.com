@@ -82,9 +82,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <StatsSection />
-
       {/* Why Choose Dr. Jan Duffy - Condensed */}
       <WhyChooseReasons variant="condensed" showCTA={true} />
 
