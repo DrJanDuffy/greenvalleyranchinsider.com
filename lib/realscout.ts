@@ -27,46 +27,40 @@ export function isRealScoutElementDefined(elementName: string): boolean {
 export function loadRealScoutScript(): Promise<void> {
   return new Promise((resolve, reject) => {
     // Check if script already exists
-    const existingScript = document.querySelector('script[src*="realscout-web-components"]') as HTMLScriptElement;
+    const existingScript = document.querySelector('script[src*="realscout-web-components"]') as HTMLScriptElement | null;
     
     if (existingScript) {
-      // Script exists, check if it's loaded
-      // readyState is a legacy property, check safely
-      const scriptElement = existingScript as HTMLScriptElement & { readyState?: string };
-      const readyState = scriptElement.readyState;
-      if (readyState === 'complete' || readyState === 'loaded') {
+      // Check if custom elements are already defined (best indicator script is loaded)
+      if (customElements.get('realscout-home-value') || 
+          customElements.get('realscout-office-listings') ||
+          customElements.get('realscout-advanced-search')) {
         resolve();
         return;
       }
       
-      // If readyState not available or not loaded, wait for load event
-      // Check if script is already loaded by checking if it has a src and is in the DOM
-      if (scriptElement.src && scriptElement.parentNode) {
-        // Script is in DOM, wait for load event or check after a short delay
-        const checkLoaded = () => {
-          if (customElements.get('realscout-home-value') || customElements.get('realscout-office-listings')) {
+      // Script exists but elements not defined yet, wait for load
+      // For module scripts, we check if they're in the DOM and wait a bit
+      if (existingScript.parentNode) {
+        // Script is in DOM, check if elements become available
+        let attempts = 0;
+        const checkInterval = setInterval(() => {
+          attempts++;
+          if (customElements.get('realscout-home-value') || 
+              customElements.get('realscout-office-listings') ||
+              customElements.get('realscout-advanced-search')) {
+            clearInterval(checkInterval);
             resolve();
-          }
-        };
-        
-        // Check immediately
-        checkLoaded();
-        
-        // Also listen for load event
-        existingScript.addEventListener('load', () => resolve());
-        existingScript.addEventListener('error', () => reject(new Error('Failed to load RealScout script')));
-        
-        // Fallback: resolve after short delay if script is in DOM
-        setTimeout(() => {
-          if (scriptElement.parentNode) {
+          } else if (attempts >= 20) {
+            // After 2 seconds, resolve anyway (script might be loading)
+            clearInterval(checkInterval);
             resolve();
           }
         }, 100);
-      } else {
-        // Wait for existing script to load
-        existingScript.addEventListener('load', () => resolve());
-        existingScript.addEventListener('error', () => reject(new Error('Failed to load RealScout script')));
       }
+      
+      // Also listen for load event as backup
+      existingScript.addEventListener('load', () => resolve(), { once: true });
+      existingScript.addEventListener('error', () => reject(new Error('Failed to load RealScout script')), { once: true });
       return;
     }
 
