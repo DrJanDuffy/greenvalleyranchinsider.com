@@ -1,10 +1,10 @@
-import { ValuationForm } from '@/components/ValuationForm';
 import { Home as HomeIcon, TrendingUp, MapPin } from 'lucide-react';
 import { NeighborhoodFocus } from '@/components/NeighborhoodFocus';
 import { MobileStickyCTA } from '@/components/MobileStickyCTA';
 import { Testimonials } from '@/components/Testimonials';
 import { PropertySearchWidget } from '@/components/PropertySearchWidget';
 import { StatsSection } from '@/components/StatsSection';
+import { RealScoutWidget } from '@/components/RealScoutWidget';
 
 export default function Home() {
   return (
@@ -77,18 +77,20 @@ export default function Home() {
       {/* Testimonials Section */}
       <Testimonials />
 
-      {/* Valuation Form Section */}
+      {/* RealScout Home Value Widget Section */}
       <section id="valuation-form" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4">
-              Discover Your Home&apos;s True Value
+              What&apos;s my home worth?
             </h2>
             <p className="text-lg text-slate-600">
-              Get a customized valuation report tailored to your Green Valley Ranch property
+              Get a free home value estimate instantly
             </p>
           </div>
-          <ValuationForm />
+          <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6 sm:p-8">
+            <RealScoutWidget />
+          </div>
         </div>
       </section>
 

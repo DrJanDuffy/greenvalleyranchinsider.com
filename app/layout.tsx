@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import { Toaster } from 'sonner';
 import { Footer } from '@/components/Footer';
@@ -56,9 +57,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* RealScout Widget Styles */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            realscout-home-value {
+              --rs-hvw-background-color: #ffffff;
+              --rs-hvw-title-color: #0F172A;
+              --rs-hvw-subtitle-color: rgba(15, 23, 42, 0.6);
+              --rs-hvw-primary-button-text-color: #0F172A;
+              --rs-hvw-primary-button-color: #C5A059;
+              --rs-hvw-secondary-button-text-color: #C5A059;
+              --rs-hvw-secondary-button-color: #ffffff;
+              --rs-hvw-widget-width: auto;
+            }
+          `
+        }} />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
+        {/* RealScout Widget Script */}
+        <Script
+          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+          type="module"
+          strategy="afterInteractive"
+        />
         <StructuredData type="WebSite" />
         <StructuredData type="RealEstateAgent" />
         <StructuredData type="LocalBusiness" />
