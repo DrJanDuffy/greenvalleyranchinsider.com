@@ -21,24 +21,8 @@ export const metadata: Metadata = {
 };
 
 export default function MysticBayPage() {
-  return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      {/* Breadcrumbs */}
-      <div className="bg-white border-b border-slate-200 py-4">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumbs items={[
-            { name: 'Green Valley Ranch', href: '/green-valley-ranch' },
-            { name: 'Mystic Bay', href: '/mystic-bay' }
-          ]} />
-        </div>
-      </div>
-
-      {/* Hero Section */}
-      <section className="relative bg-[#0F172A] text-white py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          {/* Data from Nextdoor.com/neighborhood/mysticbaynv--henderson--nv/ */}
-          {(() => {
-            const neighborhoodData = {
+  // Data from Nextdoor.com/neighborhood/mysticbaynv--henderson--nv/
+  const neighborhoodData = {
     name: 'Mystic Bay',
     city: 'Henderson',
     state: 'NV',
@@ -82,34 +66,44 @@ export default function MysticBayPage() {
   };
 
   return (
-    <div className="text-center">
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <Home className="w-8 h-8 text-[#C5A059]" />
-              <TrendingUp className="w-8 h-8 text-[#C5A059]" />
-              <Shield className="w-8 h-8 text-[#C5A059]" />
-            </div>
-            
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              <span className="text-[#C5A059]">Mystic Bay</span><br />
-              Henderson, Nevada
-            </h1>
-            
-              <p className="text-xl sm:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto">
-              Mystic Bay is a peaceful, gated subdivision within the Green Valley Ranch master-planned community in Henderson, NV. Developed by American Nevada Corporation with high-end regional builders, Mystic Bay features larger, custom Mediterranean-style homes typically over 2,500 sq. ft. Known for well-maintained homes and a friendly community, it&apos;s a quiet area with easy access to local amenities, making it a great place for families and retirees alike.
-            </p>
+    <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      {/* Breadcrumbs */}
+      <div className="bg-white border-b border-slate-200 py-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs items={[
+            { name: 'Green Valley Ranch', href: '/green-valley-ranch' },
+            { name: 'Mystic Bay', href: '/mystic-bay' }
+          ]} />
+        </div>
+      </div>
 
-            <div className="mt-10">
-              <Link
-                href="/#valuation-form"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-[#C5A059] text-[#0F172A] rounded-lg hover:bg-[#B8914F] transition-colors shadow-lg hover:shadow-xl"
-              >
-                Get Your Home Valuation
-              </Link>
-            </div>
+      {/* Hero Section */}
+      <section className="relative bg-[#0F172A] text-white py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <Home className="w-8 h-8 text-[#C5A059]" />
+            <TrendingUp className="w-8 h-8 text-[#C5A059]" />
+            <Shield className="w-8 h-8 text-[#C5A059]" />
+          </div>
+          
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <span className="text-[#C5A059]">Mystic Bay</span><br />
+            Henderson, Nevada
+          </h1>
+          
+          <p className="text-xl sm:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto">
+            {neighborhoodData.description}
+          </p>
+
+          <div className="mt-10">
+            <Link
+              href="/#valuation-form"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-[#C5A059] text-[#0F172A] rounded-lg hover:bg-[#B8914F] transition-colors shadow-lg hover:shadow-xl"
+            >
+              Get Your Home Valuation
+            </Link>
           </div>
         </div>
-      </section>
-      )()}
       </section>
 
       {/* Neighborhood Stats */}
