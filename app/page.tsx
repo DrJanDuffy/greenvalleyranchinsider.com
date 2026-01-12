@@ -72,9 +72,7 @@ export default function Home() {
       </section>
 
       {/* How I Help Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <HowIHelp />
-      </section>
+      <HowIHelp />
 
       {/* Neighborhood Focus Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
