@@ -113,6 +113,15 @@ export function Footer() {
               <Link href="/contact" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
                 Contact
               </Link>
+              <Link href="/neighborhoods" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
+                Neighborhoods
+              </Link>
+              <Link href="/investment-guide" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
+                Investment Guide
+              </Link>
+              <Link href="/area-guide" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
+                Area Guide
+              </Link>
             </div>
           </div>
         </div>
@@ -188,6 +197,20 @@ export function Footer() {
           <p className="mt-2">
             360 Mike Koizumi Way, Henderson, NV 89011
           </p>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs">
+            <Link href="/privacy" className="text-slate-400 hover:text-[#C5A059] transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="text-slate-600">|</span>
+            <a
+              href="https://www.berkshirehathawayhs.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-[#C5A059] transition-colors"
+            >
+              Berkshire Hathaway HomeServices
+            </a>
+          </div>
         </div>
       </div>
 
