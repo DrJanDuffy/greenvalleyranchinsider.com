@@ -2,7 +2,7 @@
 
 import { TrendingUp, Camera, Target, Megaphone, Handshake, FileCheck, Eye, MapPin, Building, Award, FileText, Phone } from 'lucide-react';
 import Link from 'next/link';
-import { trackPhoneCall } from '@/lib/analytics';
+import { trackPhoneClick } from '@/lib/analytics';
 
 export function HowIHelp() {
   const sellerServices = [
@@ -113,7 +113,7 @@ export function HowIHelp() {
             <p className="text-xl font-semibold mb-4">Ready to sell your Green Valley Ranch home?</p>
             <a
               href="tel:+17022221964"
-              onClick={() => trackPhoneCall('How I Help - Seller CTA')}
+              onClick={() => trackPhoneClick('7022221964')}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#C5A059] text-[#0F172A] rounded-lg font-semibold hover:bg-[#B8914F] transition-colors shadow-lg text-lg"
             >
               <Phone className="w-5 h-5" />
@@ -156,7 +156,7 @@ export function HowIHelp() {
             <p className="text-xl font-semibold mb-4">Ready to find your perfect Green Valley Ranch home?</p>
             <a
               href="tel:+17022221964"
-              onClick={() => trackPhoneCall('How I Help - Buyer CTA')}
+              onClick={() => trackPhoneClick('7022221964')}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#C5A059] text-[#0F172A] rounded-lg font-semibold hover:bg-[#B8914F] transition-colors shadow-lg text-lg"
             >
               <Phone className="w-5 h-5" />
