@@ -95,11 +95,17 @@ export function Footer() {
               <Link href="/about" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
                 About
               </Link>
-              <Link href="/buyers-guide" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
-                Buyer&apos;s Guide
+              <Link href="/resources" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
+                Resources
               </Link>
-              <Link href="/sellers-guide" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
-                Seller&apos;s Guide
+              <Link href="/market-insights" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
+                Market Insights
+              </Link>
+              <Link href="/schools" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
+                Schools
+              </Link>
+              <Link href="/testimonials" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
+                Testimonials
               </Link>
               <Link href="/faq" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
                 FAQ

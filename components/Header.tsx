@@ -12,11 +12,9 @@ export function Header() {
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Green Valley Ranch', href: '/green-valley-ranch' },
-    { name: 'Mystic Bay', href: '/mystic-bay' },
-    { name: 'The Cottages', href: '/the-cottages' },
     { name: 'Services', href: '/services' },
+    { name: 'Resources', href: '/resources' },
     { name: 'About', href: '/about' },
-    { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' },
   ];
 
