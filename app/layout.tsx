@@ -25,10 +25,6 @@ export const metadata: Metadata = {
   authors: [{ name: 'Dr. Jan Duffy' }],
   creator: 'Dr. Jan Duffy',
   publisher: 'Green Valley Ranch Insider',
-  contact: {
-    email: 'DrDuffy@GreenValleyRanchInsider.com',
-    telephone: ['+17025001955', '+17022221964'],
-  },
   openGraph: {
     title: 'Green Valley Ranch Insider | Henderson NV Real Estate Authority',
     description: 'Expert insights and premium listing services for Mystic Bay, The Cottages, and the Green Valley Ranch community.',
