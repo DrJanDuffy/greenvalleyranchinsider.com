@@ -340,7 +340,16 @@ export default function AboutPage() {
             Areas of Specialization
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {specialties.map((specialty, index) => (
+            {[
+              'Green Valley Ranch master-planned community',
+              'Mystic Bay gated subdivision',
+              'The Cottages at Green Valley Ranch',
+              'GVR Estates and luxury properties',
+              'Henderson NV real estate market',
+              'Home valuations and market analysis',
+              'Luxury home sales and marketing',
+              'Neighborhood-specific expertise',
+            ].map((specialty, index) => (
               <div
                 key={index}
                 className="flex items-center gap-3 p-4 bg-slate-50 rounded-lg border border-slate-200"
