@@ -25,22 +25,12 @@ export default function Home() {
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            The Insider Advantage:<br />
-            <span className="text-[#C5A059]">Selling Your Green Valley Ranch Home for Top Dollar</span>
+            A Henderson Home Just Sold for <span className="text-[#C5A059]">$688K</span> on Marywood Park
           </h1>
           
           <p className="text-xl sm:text-2xl text-slate-300 mb-8 max-w-2xl mx-auto">
-            Expert insights and premium listing services for Mystic Bay, The Cottages, and the Green Valley Ranch community.
+            Get every Green Valley Ranch sale before Zillow posts it
           </p>
-          
-          {/* Market Stat */}
-          <div className="flex justify-center mb-6">
-            <MarketStat 
-              stat="12% Above Zillow" 
-              description="Average GVR sale price vs. online estimates this month"
-              lastUpdated="Jan 2025"
-            />
-          </div>
           
           <div className="flex flex-wrap items-center justify-center gap-4 mt-6 text-sm">
             <a href="/green-valley-ranch" className="text-[#C5A059] hover:text-[#B8914F] hover:underline font-semibold">
@@ -58,16 +48,16 @@ export default function Home() {
           
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="#valuation-form"
+              href="sms:+17022221964?body=GVR"
               className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-[#C5A059] text-[#0F172A] rounded-lg hover:bg-[#B8914F] transition-colors shadow-lg hover:shadow-xl"
             >
-              Get Your Custom Insider Valuation
+              Text &apos;GVR&apos; to 702-222-1964
             </a>
             <a
-              href="tel:+17025001955"
+              href="tel:+17022221964"
               className="inline-flex items-center justify-center px-6 py-4 text-lg font-semibold bg-transparent border-2 border-[#C5A059] text-[#C5A059] rounded-lg hover:bg-[#C5A059]/10 transition-colors"
             >
-              (702) 500-1955
+              Call (702) 222-1964
             </a>
           </div>
         </div>
