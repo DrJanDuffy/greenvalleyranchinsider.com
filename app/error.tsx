@@ -39,17 +39,40 @@ export default function Error({
           <button
             onClick={reset}
             className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#C5A059] text-[#0F172A] rounded-lg font-semibold hover:bg-[#B8914F] transition-colors"
+            aria-label="Try again to reload the page"
           >
-            <RefreshCw className="w-5 h-5" />
+            <RefreshCw className="w-5 h-5" aria-hidden="true" />
             Try Again
           </button>
           <Link
             href="/"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-200 text-[#0F172A] rounded-lg font-semibold hover:bg-slate-300 transition-colors"
+            aria-label="Return to homepage"
           >
-            <Home className="w-5 h-5" />
+            <Home className="w-5 h-5" aria-hidden="true" />
             Go Home
           </Link>
+        </div>
+        
+        {/* Additional Help */}
+        <div className="mt-8 text-sm text-slate-500">
+          <p>If this problem persists, please contact us:</p>
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-2">
+            <a
+              href="tel:+17025001955"
+              className="text-[#C5A059] hover:underline"
+              aria-label="Call Dr. Jan Duffy at (702) 500-1955"
+            >
+              (702) 500-1955
+            </a>
+            <span className="text-slate-400">|</span>
+            <a
+              href="mailto:DrDuffy@GreenValleyRanchInsider.com"
+              className="text-[#C5A059] hover:underline"
+            >
+              DrDuffy@GreenValleyRanchInsider.com
+            </a>
+          </div>
         </div>
       </div>
     </main>

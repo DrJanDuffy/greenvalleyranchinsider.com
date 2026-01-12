@@ -23,22 +23,25 @@ export default function NotFound() {
             <Link
               href="/"
               className="flex flex-col items-center gap-2 p-4 bg-slate-50 rounded-lg hover:bg-[#C5A059]/10 transition-colors"
+              aria-label="Return to homepage"
             >
-              <Home className="w-6 h-6 text-[#C5A059]" />
+              <Home className="w-6 h-6 text-[#C5A059]" aria-hidden="true" />
               <span className="font-semibold text-[#0F172A]">Home</span>
             </Link>
             <Link
               href="/green-valley-ranch"
               className="flex flex-col items-center gap-2 p-4 bg-slate-50 rounded-lg hover:bg-[#C5A059]/10 transition-colors"
+              aria-label="Explore Green Valley Ranch communities"
             >
-              <MapPin className="w-6 h-6 text-[#C5A059]" />
+              <MapPin className="w-6 h-6 text-[#C5A059]" aria-hidden="true" />
               <span className="font-semibold text-[#0F172A]">Communities</span>
             </Link>
             <a
               href="tel:+17025001955"
               className="flex flex-col items-center gap-2 p-4 bg-slate-50 rounded-lg hover:bg-[#C5A059]/10 transition-colors"
+              aria-label="Call Dr. Jan Duffy at (702) 500-1955"
             >
-              <Phone className="w-6 h-6 text-[#C5A059]" />
+              <Phone className="w-6 h-6 text-[#C5A059]" aria-hidden="true" />
               <span className="font-semibold text-[#0F172A]">Call Us</span>
             </a>
           </div>
