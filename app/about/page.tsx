@@ -22,24 +22,24 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   const credentials = [
     {
-      icon: Award,
-      title: 'Top Agent Performance',
-      description: 'Consistently ranked among top performers at Berkshire Hathaway HomeServices Nevada Properties',
-    },
-    {
       icon: GraduationCap,
       title: '30+ Years Experience',
-      description: 'Extensive knowledge of Las Vegas and Henderson real estate markets since the early 1990s',
+      description: 'Decades of experience and deep local knowledge of Green Valley Ranch. Las Vegas real estate expertise spanning over three decades.',
     },
     {
       icon: TrendingUp,
       title: '135+ Domains Managed',
-      description: 'Expert in neighborhood-focused real estate marketing and digital presence',
+      description: 'Neighborhood-focused websites demonstrating expertise in targeted real estate marketing and digital presence.',
+    },
+    {
+      icon: Award,
+      title: 'Top Agent Performance',
+      description: 'Consistently ranked among top performers at Berkshire Hathaway HomeServices Nevada Properties.',
     },
     {
       icon: Shield,
-      title: 'Licensed Professional',
-      description: 'Nevada License #S.0197614.LLC | Berkshire Hathaway HomeServices Nevada Properties',
+      title: 'Expert Green Valley Ranch Insider',
+      description: 'Insider knowledge & insights into Mystic Bay, The Cottages, and the entire Green Valley Ranch master-planned community.',
     },
   ];
 
@@ -93,11 +93,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Credentials */}
+      {/* Why Choose Dr. Jan Duffy */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-[#0F172A] mb-12 text-center">
-            Credentials & Expertise
+            Why Choose Dr. Jan Duffy?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {credentials.map((credential, index) => {
