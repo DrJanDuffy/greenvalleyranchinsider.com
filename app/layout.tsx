@@ -71,6 +71,12 @@ export default function RootLayout({
               --rs-hvw-secondary-button-color: #ffffff;
               --rs-hvw-widget-width: auto;
             }
+            realscout-simple-search {
+              --rs-ss-font-primary-color: #000000;
+              --rs-ss-searchbar-border-color: #8b572a;
+              --rs-ss-box-shadow: 0 10px 15px -3px #0000001a;
+              --rs-ss-widget-width: 500px !important;
+            }
           `
         }} />
       </head>

@@ -2,9 +2,9 @@ import { Home as HomeIcon, TrendingUp, MapPin } from 'lucide-react';
 import { NeighborhoodFocus } from '@/components/NeighborhoodFocus';
 import { MobileStickyCTA } from '@/components/MobileStickyCTA';
 import { Testimonials } from '@/components/Testimonials';
-import { PropertySearchWidget } from '@/components/PropertySearchWidget';
 import { StatsSection } from '@/components/StatsSection';
 import { RealScoutWidget } from '@/components/RealScoutWidget';
+import { RealScoutSimpleSearch } from '@/components/RealScoutSimpleSearch';
 
 export default function Home() {
   return (
@@ -57,10 +57,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Property Search Widget */}
+      {/* RealScout Simple Search Widget */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
-          <PropertySearchWidget />
+          <div className="flex flex-col items-center">
+            <div className="w-full max-w-[500px]">
+              <RealScoutSimpleSearch />
+            </div>
+          </div>
         </div>
       </section>
 
