@@ -7,6 +7,7 @@ import { RealScoutWidget } from '@/components/RealScoutWidget';
 import { RealScoutAdvancedSearch } from '@/components/RealScoutAdvancedSearch';
 import { RealScoutOfficeListings } from '@/components/RealScoutOfficeListings';
 import { RealScoutSoldListings } from '@/components/RealScoutSoldListings';
+import { HomebotWidget } from '@/components/HomebotWidget';
 import { NewsletterSignup } from '@/components/NewsletterSignup';
 import { HowIHelp } from '@/components/HowIHelp';
 import { WhyChooseReasons } from '@/components/WhyChooseReasons';
