@@ -31,11 +31,21 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'Green Valley Ranch Insider',
+    url: 'https://greenvalleyranchinsider.com',
+    images: [
+      {
+        url: 'https://greenvalleyranchinsider.com/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Green Valley Ranch Insider - Henderson NV Real Estate Authority',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Green Valley Ranch Insider | Henderson NV Real Estate Authority',
     description: 'Expert insights and premium listing services for Mystic Bay, The Cottages, and the Green Valley Ranch community.',
+    images: ['https://greenvalleyranchinsider.com/og-image.jpg'],
   },
 };
 

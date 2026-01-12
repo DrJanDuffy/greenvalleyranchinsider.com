@@ -1,0 +1,22 @@
+OG Image Placeholder
+
+To complete Open Graph setup, add an og-image.jpg file to the /public directory.
+
+Recommended specifications:
+- Dimensions: 1200x630 pixels (1.91:1 aspect ratio)
+- Format: JPG, PNG, or WEBP
+- File size: Less than 5 MB
+- Content: Should include:
+  - "Green Valley Ranch Insider" branding
+  - Dr. Jan Duffy's name or logo
+  - Henderson, NV location
+  - Real estate imagery or Green Valley Ranch visuals
+
+You can create this image using:
+- Canva (1200x630 template)
+- Adobe Photoshop/Illustrator
+- Online OG image generators
+- Or hire a designer
+
+Once added, the file should be at: /public/og-image.jpg
+The metadata in app/layout.tsx is already configured to use it.
