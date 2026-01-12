@@ -20,47 +20,90 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  const credentials = [
-    {
-      icon: GraduationCap,
-      title: '30+ Years Experience',
-      description: 'Decades of experience and deep local knowledge of Green Valley Ranch. Las Vegas real estate expertise spanning over three decades.',
-    },
-    {
-      icon: TrendingUp,
-      title: '135+ Domains Managed',
-      description: 'Neighborhood-focused websites demonstrating expertise in targeted real estate marketing and digital presence.',
-    },
-    {
-      icon: Award,
-      title: 'Top Agent Performance',
-      description: 'Consistently ranked among top performers at Berkshire Hathaway HomeServices Nevada Properties.',
-    },
-    {
-      icon: Shield,
-      title: 'Expert Green Valley Ranch Insider',
-      description: 'Insider knowledge & insights into Mystic Bay, The Cottages, and the entire Green Valley Ranch master-planned community.',
-    },
-  ];
-
-  const specialties = [
-    'Green Valley Ranch master-planned community',
-    'Mystic Bay gated subdivision',
-    'The Cottages at Green Valley Ranch',
-    'GVR Estates and luxury properties',
-    'Henderson NV real estate market',
-    'Home valuations and market analysis',
-    'Luxury home sales and marketing',
-    'Neighborhood-specific expertise',
-  ];
-
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      {/* Breadcrumbs */}
+      <div className="bg-white border-b border-slate-200 py-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs items={[{ name: 'About', href: '/about' }]} />
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section className="relative bg-[#0F172A] text-white py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <Award className="w-8 h-8 text-[#C5A059]" />
+            <Users className="w-8 h-8 text-[#C5A059]" />
+            <Shield className="w-8 h-8 text-[#C5A059]" />
+          </div>
+          
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            About <span className="text-[#C5A059]">Dr. Jan Duffy</span>
+          </h1>
+          
+          <p className="text-xl sm:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto">
+            30+ years of real estate expertise in Las Vegas and Henderson. 
+            Your trusted guide to Green Valley Ranch, Mystic Bay, and The Cottages.
+          </p>
+        </div>
+      </section>
+
+      {/* Introduction */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="prose prose-lg max-w-none">
+            <h2 className="text-3xl font-bold text-[#0F172A] mb-6">Your Green Valley Ranch Insider</h2>
+            <p className="text-lg text-slate-700 leading-relaxed mb-4">
+              With over 30 years of experience in the Las Vegas and Henderson real estate markets, Dr. Jan Duffy brings unparalleled expertise to every transaction. As a top-performing agent with Berkshire Hathaway HomeServices Nevada Properties, she specializes in the prestigious Green Valley Ranch master-planned community and its exclusive subdivisions.
+            </p>
+            <p className="text-lg text-slate-700 leading-relaxed mb-4">
+              Dr. Duffy's deep knowledge of neighborhoods like Mystic Bay, The Cottages, and GVR Estates goes beyond what you'll find in a typical listing. She understands the unique characteristics, market trends, and insider details that make each community special—knowledge that comes from years of working directly with homeowners and buyers in these areas.
+            </p>
+            <p className="text-lg text-slate-700 leading-relaxed">
+              Whether you're selling your home for top dollar or finding your perfect property, Dr. Duffy combines data-driven insights with personalized service to deliver exceptional results.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Stats */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
-          <Breadcrumbs items={[{ label: 'About' }]} />
-          <div className="text-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-5xl font-bold text-[#C5A059] mb-2">30+</div>
+              <div className="text-lg font-semibold text-[#0F172A] mb-1">Years Experience</div>
+              <div className="text-sm text-slate-600">Las Vegas real estate expertise</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-[#C5A059] mb-2">135+</div>
+              <div className="text-lg font-semibold text-[#0F172A] mb-1">Domains Managed</div>
+              <div className="text-sm text-slate-600">Neighborhood-focused websites</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-[#C5A059] mb-2">Top</div>
+              <div className="text-lg font-semibold text-[#0F172A] mb-1">Agent Performance</div>
+              <div className="text-sm text-slate-600">Berkshire Hathaway HomeServices</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-[#C5A059] mb-2">Expert</div>
+              <div className="text-lg font-semibold text-[#0F172A] mb-1">Green Valley Ranch</div>
+              <div className="text-sm text-slate-600">Insider knowledge & insights</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Dr. Jan Duffy */}
+      <section id="why-choose" className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4 text-center">
+            Why Choose Dr. Jan Duffy?
+          </h2>
+          <p className="text-lg text-slate-600 text-center mb-12 max-w-3xl mx-auto">
+            Real expertise goes beyond credentials. Here's what you get when you work with someone who makes the decisions that truly matter in your transaction.
+          </p>
             <div className="flex items-center justify-center gap-3 mb-6">
               <Users className="w-8 h-8 text-[#C5A059]" />
               <Award className="w-8 h-8 text-[#C5A059]" />

@@ -2,51 +2,90 @@
 
 import Link from 'next/link';
 import { ChevronRight, Home } from 'lucide-react';
-import { BreadcrumbStructuredData } from './BreadcrumbStructuredData';
+import { generateBreadcrumbSchema } from '@/lib/seo';
 
-type BreadcrumbItem = {
-  label: string;
-  href?: string;
-};
+interface BreadcrumbItem {
+  name: string;
+  href: string;
+}
 
-type BreadcrumbsProps = {
+interface BreadcrumbsProps {
   items: BreadcrumbItem[];
-};
+  className?: string;
+}
 
-export function Breadcrumbs({ items }: BreadcrumbsProps) {
+/**
+ * Breadcrumb Navigation Component with Schema Markup
+ * Improves SEO and user navigation
+ */
+export function Breadcrumbs({ items, className = '' }: BreadcrumbsProps) {
+  // Generate breadcrumb schema
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: 'https://greenvalleyranchinsider.com' },
+    ...items.map(item => ({
+      name: item.name,
+      url: `https://greenvalleyranchinsider.com${item.href}`,
+    })),
+  ]);
+
   return (
     <>
-      <BreadcrumbStructuredData items={items} />
-      <nav className="flex items-center space-x-2 text-sm text-slate-600 mb-6" aria-label="Breadcrumb">
-      <Link
-        href="/"
-        className="flex items-center hover:text-[#C5A059] transition-colors"
-      >
-        <Home className="w-4 h-4" />
-        <span className="sr-only">Home</span>
-      </Link>
+      {/* Breadcrumb Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
       
-      {items.map((item, index) => {
-        const isLast = index === items.length - 1;
-        
-        return (
-          <div key={index} className="flex items-center space-x-2">
-            <ChevronRight className="w-4 h-4 text-slate-400" />
-            {isLast || !item.href ? (
-              <span className={isLast ? 'text-[#C5A059] font-semibold' : 'text-slate-600'}>
-                {item.label}
-              </span>
-            ) : (
-              <Link
-                href={item.href}
-                className="hover:text-[#C5A059] transition-colors"
-              >
-                {item.label}
-              </Link>
-            )}
-          </div>
-        );
-      })}
+      {/* Visual Breadcrumb Navigation */}
+      <nav
+        aria-label="Breadcrumb"
+        className={`flex items-center space-x-2 text-sm ${className}`}
+      >
+        <ol className="flex items-center space-x-2" itemScope itemType="https://schema.org/BreadcrumbList">
+          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <Link
+              href="/"
+              className="flex items-center text-slate-500 hover:text-[#C5A059] transition-colors"
+              itemProp="item"
+            >
+              <Home className="w-4 h-4 mr-1" />
+              <span itemProp="name">Home</span>
+            </Link>
+            <meta itemProp="position" content="1" />
+          </li>
+          
+          {items.map((item, index) => (
+            <li
+              key={item.href}
+              itemProp="itemListElement"
+              itemScope
+              itemType="https://schema.org/ListItem"
+              className="flex items-center"
+            >
+              <ChevronRight className="w-4 h-4 text-slate-400 mx-2" />
+              {index === items.length - 1 ? (
+                <span
+                  className="text-[#C5A059] font-medium"
+                  itemProp="name"
+                  aria-current="page"
+                >
+                  {item.name}
+                </span>
+              ) : (
+                <Link
+                  href={item.href}
+                  className="text-slate-500 hover:text-[#C5A059] transition-colors"
+                  itemProp="item"
+                >
+                  <span itemProp="name">{item.name}</span>
+                </Link>
+              )}
+              <meta itemProp="position" content={String(index + 2)} />
+            </li>
+          ))}
+        </ol>
       </nav>
     </>
   );

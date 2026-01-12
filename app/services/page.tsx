@@ -22,90 +22,31 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
-  const sellerServices = [
-    {
-      icon: TrendingUp,
-      title: 'Custom Home Valuation',
-      description: 'Get an accurate, data-driven estimate of your home\'s value based on recent sales, market trends, and unique property features in your neighborhood.',
-    },
-    {
-      icon: Camera,
-      title: 'Professional Marketing',
-      description: 'High-quality photography, virtual tours, and strategic marketing across multiple platforms to showcase your property\'s best features.',
-    },
-    {
-      icon: BarChart,
-      title: 'Market Analysis',
-      description: 'Comprehensive market analysis including comparable sales, pricing strategy, and timing recommendations for maximum return.',
-    },
-    {
-      icon: Users,
-      title: 'Buyer Qualification',
-      description: 'Thorough screening of potential buyers to ensure serious, qualified prospects and smooth transactions.',
-    },
-    {
-      icon: FileText,
-      title: 'Transaction Management',
-      description: 'Expert handling of all paperwork, negotiations, and coordination from listing to closing.',
-    },
-    {
-      icon: Shield,
-      title: 'Neighborhood Expertise',
-      description: 'Deep knowledge of Green Valley Ranch communities to position your property effectively and attract the right buyers.',
-    },
-  ];
-
-  const buyerServices = [
-    {
-      icon: Search,
-      title: 'Property Search',
-      description: 'Access to comprehensive MLS listings and off-market opportunities in Green Valley Ranch and surrounding areas.',
-    },
-    {
-      icon: Home,
-      title: 'Neighborhood Guidance',
-      description: 'Expert insights into Mystic Bay, The Cottages, and other GVR communities to find your perfect match.',
-    },
-    {
-      icon: BarChart,
-      title: 'Market Insights',
-      description: 'Current market conditions, pricing trends, and investment potential analysis for informed decision-making.',
-    },
-    {
-      icon: Shield,
-      title: 'Negotiation Expertise',
-      description: 'Skilled negotiation to secure the best price and terms for your new home purchase.',
-    },
-    {
-      icon: FileText,
-      title: 'Transaction Support',
-      description: 'Guidance through inspections, appraisals, financing, and all steps to a successful closing.',
-    },
-    {
-      icon: Users,
-      title: 'Network Access',
-      description: 'Connections with trusted lenders, inspectors, contractors, and other professionals in the Henderson area.',
-    },
-  ];
-
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      {/* Breadcrumbs */}
+      <div className="bg-white border-b border-slate-200 py-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs items={[{ name: 'Services', href: '/services' }]} />
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section className="relative bg-[#0F172A] text-white py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <Breadcrumbs items={[{ label: 'Services' }]} />
-          <div className="text-center">
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <Home className="w-8 h-8 text-[#C5A059]" />
-              <TrendingUp className="w-8 h-8 text-[#C5A059]" />
-            </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Real Estate Services
-            </h1>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Comprehensive services for sellers and buyers in Green Valley Ranch and Henderson, NV
-            </p>
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <Home className="w-8 h-8 text-[#C5A059]" />
+            <TrendingUp className="w-8 h-8 text-[#C5A059]" />
+            <Shield className="w-8 h-8 text-[#C5A059]" />
           </div>
+          
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            Real Estate <span className="text-[#C5A059]">Services</span>
+          </h1>
+          
+          <p className="text-xl sm:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto">
+            Comprehensive services for sellers and buyers in Green Valley Ranch, Mystic Bay, and The Cottages
+          </p>
         </div>
       </section>
 

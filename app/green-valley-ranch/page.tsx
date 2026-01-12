@@ -89,7 +89,9 @@ export default function GreenValleyRanchPage() {
       {/* Hero Section */}
       <section className="relative bg-[#0F172A] text-white py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <Breadcrumbs items={[{ label: 'Green Valley Ranch' }]} />
+          <div className="mb-6 px-4">
+            <Breadcrumbs items={[{ name: 'Green Valley Ranch', href: '/green-valley-ranch' }]} />
+          </div>
           <div className="text-center">
             <div className="flex items-center justify-center gap-3 mb-6">
               <Home className="w-8 h-8 text-[#C5A059]" />
