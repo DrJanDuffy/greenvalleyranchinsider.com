@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
+  // SEO: Generate static pages for better indexing
+  output: 'standalone',
+  // Performance optimizations
+  swcMinify: true,
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
@@ -18,10 +22,18 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'em.realscout.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'embed.homebotapp.com',
+      },
     ],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
+  // Headers for SEO and Security
   headers: async () => {
     return [
       {
@@ -47,8 +59,29 @@ const nextConfig: NextConfig = {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=()'
           },
+          // SEO Headers
+          {
+            key: 'X-Robots-Tag',
+            value: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+          },
         ],
       },
+      // Allow Googlebot to crawl
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, must-revalidate',
+          },
+        ],
+      },
+    ];
+  },
+  // Redirects for SEO (if needed)
+  async redirects() {
+    return [
+      // Add any redirects here if needed
     ];
   },
 };

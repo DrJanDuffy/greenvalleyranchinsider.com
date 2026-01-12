@@ -11,6 +11,34 @@ import { NewsletterSignup } from '@/components/NewsletterSignup';
 import { HowIHelp } from '@/components/HowIHelp';
 import { WhyChooseReasons } from '@/components/WhyChooseReasons';
 import { MarketStat } from '@/components/MarketStat';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Green Valley Ranch Insider | Henderson NV Real Estate Authority',
+  description: 'A Henderson home just sold for $688K on Marywood Park. Get every Green Valley Ranch sale before Zillow posts it. Expert real estate services for Mystic Bay, The Cottages, and Green Valley Ranch.',
+  keywords: [
+    'Green Valley Ranch',
+    'Henderson NV real estate',
+    'Mystic Bay Henderson',
+    'The Cottages Henderson',
+    'Henderson homes for sale',
+    '89052 real estate',
+    'Dr. Jan Duffy',
+    'Berkshire Hathaway HomeServices',
+    'home valuation Henderson',
+    'property search Henderson',
+    'real estate agent Henderson NV',
+  ],
+  alternates: {
+    canonical: 'https://greenvalleyranchinsider.com',
+  },
+  openGraph: {
+    title: 'Green Valley Ranch Insider | Henderson NV Real Estate Authority',
+    description: 'Get every Green Valley Ranch sale before Zillow posts it. Expert real estate services for Mystic Bay, The Cottages, and Green Valley Ranch.',
+    url: 'https://greenvalleyranchinsider.com',
+    type: 'website',
+  },
+};
 
 export default function Home() {
   return (
