@@ -93,6 +93,34 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Key Stats */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-5xl font-bold text-[#C5A059] mb-2">30+</div>
+              <div className="text-lg font-semibold text-[#0F172A] mb-1">Years Experience</div>
+              <div className="text-sm text-slate-600">Las Vegas real estate expertise</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-[#C5A059] mb-2">135+</div>
+              <div className="text-lg font-semibold text-[#0F172A] mb-1">Domains Managed</div>
+              <div className="text-sm text-slate-600">Neighborhood-focused websites</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-[#C5A059] mb-2">Top</div>
+              <div className="text-lg font-semibold text-[#0F172A] mb-1">Agent Performance</div>
+              <div className="text-sm text-slate-600">Berkshire Hathaway HomeServices</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-[#C5A059] mb-2">Expert</div>
+              <div className="text-lg font-semibold text-[#0F172A] mb-1">Green Valley Ranch</div>
+              <div className="text-sm text-slate-600">Insider knowledge & insights</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Dr. Jan Duffy */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
