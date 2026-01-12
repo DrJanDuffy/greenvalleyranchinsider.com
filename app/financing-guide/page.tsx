@@ -113,7 +113,7 @@ export default function FinancingGuidePage() {
       {/* Hero Section */}
       <section className="relative bg-[#0F172A] text-white py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <Breadcrumbs items={[{ label: 'Financing Guide' }]} />
+          <Breadcrumbs items={[{ name: 'Financing Guide', href: '/financing-guide' }]} />
           <div className="text-center">
             <div className="flex items-center justify-center gap-3 mb-6">
               <DollarSign className="w-8 h-8 text-[#C5A059]" />

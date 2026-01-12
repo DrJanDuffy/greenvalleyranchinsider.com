@@ -66,7 +66,7 @@ export default async function LocationPage() {
       {/* Hero Section */}
       <section className="relative bg-[#0F172A] text-white py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <Breadcrumbs items={[{ label: 'Office Location' }]} />
+          <Breadcrumbs items={[{ name: 'Office Location', href: '/location' }]} />
           <div className="flex items-center gap-3 mb-6">
             <MapPin className="w-8 h-8 text-[#C5A059]" />
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">

@@ -61,7 +61,7 @@ export default function FAQPage() {
       {/* Hero Section */}
       <section className="relative bg-[#0F172A] text-white py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <Breadcrumbs items={[{ label: 'FAQ' }]} />
+          <Breadcrumbs items={[{ name: 'FAQ', href: '/faq' }]} />
           <div className="text-center">
             <div className="flex items-center justify-center gap-3 mb-6">
               <HelpCircle className="w-8 h-8 text-[#C5A059]" />

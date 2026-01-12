@@ -21,7 +21,7 @@ export default function PrivacyPage() {
       {/* Hero Section */}
       <section className="relative bg-[#0F172A] text-white py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <Breadcrumbs items={[{ label: 'Privacy Policy' }]} />
+          <Breadcrumbs items={[{ name: 'Privacy Policy', href: '/privacy' }]} />
           <div className="text-center">
             <div className="flex items-center justify-center gap-3 mb-6">
               <Shield className="w-8 h-8 text-[#C5A059]" />

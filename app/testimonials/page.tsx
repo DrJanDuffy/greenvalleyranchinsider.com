@@ -91,7 +91,7 @@ export default function TestimonialsPage() {
       {/* Hero Section */}
       <section className="relative bg-[#0F172A] text-white py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <Breadcrumbs items={[{ label: 'Testimonials' }]} />
+          <Breadcrumbs items={[{ name: 'Testimonials', href: '/testimonials' }]} />
           <div className="text-center">
             <div className="flex items-center justify-center gap-3 mb-6">
               <Star className="w-8 h-8 text-[#C5A059]" />

@@ -107,7 +107,7 @@ export default function MarketInsightsPage() {
       {/* Hero Section */}
       <section className="relative bg-[#0F172A] text-white py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <Breadcrumbs items={[{ label: 'Market Insights' }]} />
+          <Breadcrumbs items={[{ name: 'Market Insights', href: '/market-insights' }]} />
           <div className="text-center">
             <div className="flex items-center justify-center gap-3 mb-6">
               <BarChart className="w-8 h-8 text-[#C5A059]" />
