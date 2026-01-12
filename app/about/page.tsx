@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Award, GraduationCap, TrendingUp, Users, Home, Shield, Phone, Mail, MapPin } from 'lucide-react';
+import { Award, GraduationCap, TrendingUp, Users, Home, Shield, Phone, Mail, MapPin, Handshake } from 'lucide-react';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import Link from 'next/link';
 import { RealScoutOfficeListings } from '@/components/RealScoutOfficeListings';
@@ -123,34 +123,238 @@ export default function AboutPage() {
 
       {/* Why Choose Dr. Jan Duffy */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#0F172A] mb-12 text-center">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4 text-center">
             Why Choose Dr. Jan Duffy?
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {credentials.map((credential, index) => {
-              const Icon = credential.icon;
-              return (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-[#C5A059] rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-6 h-6 text-[#0F172A]" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-[#0F172A] mb-2">
-                        {credential.title}
-                      </h3>
-                      <p className="text-slate-600">
-                        {credential.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+          <p className="text-lg text-slate-600 text-center mb-12 max-w-3xl mx-auto">
+            Real expertise goes beyond credentials. Here's what you get when you work with someone who makes the decisions that truly matter in your transaction.
+          </p>
+
+          {/* Pricing & Valuation */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-[#0F172A] mb-6 flex items-center gap-3">
+              <TrendingUp className="w-6 h-6 text-[#C5A059]" />
+              Pricing & Valuation Decisions
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Final list price recommendation (owning the number)</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Price reduction timing and amount decisions</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Interpreting why comps sold—not just what they sold for</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Adjusting for unique features AI can't quantify (views, noise, smell, vibe)</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Reading seller motivation to set realistic expectations</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Advising on offer price strategy for buyers</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Knowing when a property is overpriced vs. worth it</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Predicting appraisal risk and advising accordingly</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Recommending pre-listing improvements ROI</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Identifying hidden value (lot potential, ADU opportunity)</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Negotiation & Deal Strategy */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-[#0F172A] mb-6 flex items-center gap-3">
+              <Handshake className="w-6 h-6 text-[#C5A059]" />
+              Negotiation & Deal Strategy
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Counter-offer strategy and timing</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Reading the other agent's tells and client situation</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Knowing when to push vs. walk away</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Inspection negotiation—what to ask for, what to let go</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Repair credit vs. repair completion recommendations</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Escalation clause advice</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Multiple offer situation guidance</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Backup offer positioning</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Creative deal structuring (seller financing, assumable loans)</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Client Advisory & Counseling */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-[#0F172A] mb-6 flex items-center gap-3">
+              <Users className="w-6 h-6 text-[#C5A059]" />
+              Client Advisory & Counseling
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Recommending buy vs. rent based on client situation</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Advising sell-first vs. buy-first timing</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Reading emotional readiness to transact</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Guiding divorce clients through equitable solutions</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Advising heirs on probate property decisions</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Helping relocating buyers prioritize neighborhoods</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Counseling anxious first-time buyers through fear</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Managing seller expectations on timeline</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Advising on 1031 exchange timing and strategy</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Retirement community fit assessment (55+ lifestyle match)</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Investment property portfolio strategy</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Risk Assessment & Problem-Solving */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-[#0F172A] mb-6 flex items-center gap-3">
+              <Shield className="w-6 h-6 text-[#C5A059]" />
+              Risk Assessment & Problem-Solving
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Identifying red flags in disclosures</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Recommending additional inspections (sewer scope, pool, roof)</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Advising on title issues and resolution paths</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Recognizing financing risk before it kills a deal</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Spotting appraisal problems early</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Managing low appraisal situations</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Navigating HOA issues and restrictions</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Handling permit and code violation discoveries</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Advising on environmental concerns (mold, asbestos, radon)</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Physical Execution & Local Knowledge */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-[#0F172A] mb-6 flex items-center gap-3">
+              <Home className="w-6 h-6 text-[#C5A059]" />
+              Physical Execution & Local Knowledge
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Walking properties with buyers (in-person, not virtual)</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Noticing deferred maintenance during walkthrough</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Smelling mold, smoke, pets (what AI can't detect)</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Hearing traffic, airport, neighbor noise in real-time</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Driving neighborhoods to know inventory intimately</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Knowing which streets flood after rain</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Learning school drop-off traffic patterns</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Identifying noise sources (flight paths, highways)</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Discovering hidden neighborhood gems</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Building relationships with HOA boards</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Knowing local business owners by name</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <p className="text-slate-700 text-sm">Understanding microclimate differences (wind, sun)</p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="bg-gradient-to-br from-[#0F172A] to-slate-900 rounded-xl p-8 text-white text-center">
+            <p className="text-xl font-semibold mb-4">This is the difference between an agent and an expert</p>
+            <p className="text-slate-300 mb-6 max-w-2xl mx-auto">
+              When you work with Dr. Jan Duffy, you get someone who makes the decisions that truly matter—not just someone who processes paperwork.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="tel:+17022221964"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#C5A059] text-[#0F172A] rounded-lg font-semibold hover:bg-[#B8914F] transition-colors shadow-lg text-lg"
+              >
+                <Phone className="w-5 h-5" />
+                Let's Talk About Your Goals
+              </a>
+              <Link
+                href="/services"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-[#C5A059] text-[#C5A059] rounded-lg font-semibold hover:bg-[#C5A059]/10 transition-colors"
+              >
+                View All Services
+              </Link>
+            </div>
           </div>
         </div>
       </section>
