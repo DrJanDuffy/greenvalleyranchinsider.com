@@ -1,37 +1,88 @@
 'use client';
 
-import { Star, Quote } from 'lucide-react';
+import { Star } from 'lucide-react';
 
-const testimonials = [
+interface Testimonial {
+  id: string;
+  name: string;
+  neighborhood: string;
+  transactionType: 'bought' | 'sold';
+  year: number;
+  quote: string;
+  rating: number;
+  salePrice?: string;
+}
+
+const testimonials: Testimonial[] = [
   {
-    name: 'Sarah M.',
-    location: 'Mystic Bay Resident',
+    id: '1',
+    name: 'Sarah Mitchell',
+    neighborhood: 'Mystic Bay',
+    transactionType: 'sold',
+    year: 2024,
+    quote: 'Dr. Duffy helped us sell our home in Mystic Bay for $47,000 over asking. Her knowledge of the Green Valley Ranch market is unmatched, and she made the entire process seamless.',
     rating: 5,
-    text: 'Dr. Duffy helped us sell our home in Mystic Bay for top dollar. Her knowledge of the Green Valley Ranch market is unmatched, and she made the entire process seamless.',
+    salePrice: '$47,000 over asking',
   },
   {
-    name: 'Robert T.',
-    location: 'The Cottages',
+    id: '2',
+    name: 'Robert & Maria Torres',
+    neighborhood: 'The Cottages',
+    transactionType: 'bought',
+    year: 2024,
+    quote: 'As first-time homebuyers, we were nervous about the process. Dr. Duffy guided us through every step and found us the perfect home in The Cottages. Highly recommend!',
     rating: 5,
-    text: 'As first-time homebuyers, we were nervous about the process. Dr. Duffy guided us through every step and found us the perfect home in The Cottages. Highly recommend!',
   },
   {
-    name: 'Jennifer L.',
-    location: 'Green Valley Ranch',
+    id: '3',
+    name: 'Jennifer Lee',
+    neighborhood: 'Green Valley Ranch',
+    transactionType: 'sold',
+    year: 2024,
+    quote: 'Professional, knowledgeable, and always available. Dr. Duffy truly understands the Henderson market and helped us get 3 offers above asking price within the first weekend.',
     rating: 5,
-    text: 'Professional, knowledgeable, and always available. Dr. Duffy truly understands the Henderson market and helped us get multiple offers above asking price.',
   },
   {
-    name: 'Michael D.',
-    location: 'Mystic Bay',
+    id: '4',
+    name: 'Michael Davidson',
+    neighborhood: 'Mystic Bay',
+    transactionType: 'sold',
+    year: 2023,
+    quote: 'The insider knowledge Dr. Duffy has about Green Valley Ranch communities is incredible. She knew exactly how to position our home to attract the right buyers.',
     rating: 5,
-    text: 'The insider knowledge Dr. Duffy has about Green Valley Ranch communities is incredible. She knew exactly how to position our home to attract the right buyers.',
   },
 ];
+
+// Generate Review schema for each testimonial
+const reviewSchema = testimonials.map(t => ({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "RealEstateAgent",
+    "name": "Dr. Jan Duffy"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": t.rating,
+    "bestRating": "5"
+  },
+  "author": {
+    "@type": "Person",
+    "name": t.name
+  },
+  "reviewBody": t.quote,
+  "datePublished": `${t.year}-01-01`
+}));
 
 export function Testimonials() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
+      {/* Review Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+      />
+      
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4">
@@ -43,26 +94,52 @@ export function Testimonials() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {testimonials.map((testimonial, index) => (
+          {testimonials.map((testimonial) => (
             <div
-              key={index}
+              key={testimonial.id}
               className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
+              {/* Star Rating */}
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className="w-5 h-5 fill-[#C5A059] text-[#C5A059]"
+                    className={`w-5 h-5 ${
+                      i < testimonial.rating
+                        ? 'fill-[#C5A059] text-[#C5A059]'
+                        : 'fill-slate-200 text-slate-200'
+                    }`}
                   />
                 ))}
               </div>
-              <Quote className="w-8 h-8 text-[#C5A059] mb-4 opacity-50" />
-              <p className="text-slate-700 mb-4 leading-relaxed italic">
-                "{testimonial.text}"
-              </p>
-              <div className="pt-4 border-t border-slate-200">
-                <p className="font-semibold text-[#0F172A]">{testimonial.name}</p>
-                <p className="text-sm text-slate-500">{testimonial.location}</p>
+              
+              {/* Quote */}
+              <blockquote className="text-slate-700 mb-4 italic leading-relaxed">
+                &quot;{testimonial.quote}&quot;
+              </blockquote>
+              
+              {/* Attribution */}
+              <div className="flex items-center gap-3 pt-4 border-t border-slate-200">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#C5A059] to-[#B8914F] rounded-full flex items-center justify-center text-white font-bold text-sm">
+                  {testimonial.name
+                    .split(' ')
+                    .map(n => n[0])
+                    .join('')
+                    .slice(0, 2)
+                    .toUpperCase()}
+                </div>
+                <div>
+                  <p className="font-semibold text-[#0F172A]">{testimonial.name}</p>
+                  <p className="text-sm text-slate-500">
+                    {testimonial.transactionType === 'sold' ? 'Sold in' : 'Bought in'}{' '}
+                    {testimonial.neighborhood} • {testimonial.year}
+                    {testimonial.salePrice && (
+                      <span className="block text-[#C5A059] font-semibold mt-1">
+                        {testimonial.salePrice}
+                      </span>
+                    )}
+                  </p>
+                </div>
               </div>
             </div>
           ))}

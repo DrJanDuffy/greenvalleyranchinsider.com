@@ -14,6 +14,29 @@ export function RealScoutWidget() {
       document.head.appendChild(script);
     }
 
+    // Add custom styles for RealScout widget
+    if (!document.querySelector('#realscout-widget-styles')) {
+      const style = document.createElement('style');
+      style.id = 'realscout-widget-styles';
+      style.textContent = `
+        realscout-home-value {
+          --rs-hvw-background-color: #ffffff;
+          --rs-hvw-title-color: #000000;
+          --rs-hvw-subtitle-color: rgba(28, 30, 38, 0.5);
+          --rs-hvw-primary-button-text-color: #ffffff;
+          --rs-hvw-primary-button-color: rgb(35, 93, 137);
+          --rs-hvw-secondary-button-text-color: rgb(35, 93, 137);
+          --rs-hvw-secondary-button-color: #ffffff;
+          --rs-hvw-widget-width: auto;
+        }
+        realscout-office-listings {
+          --rs-listing-divider-color: #0e64c8;
+          width: 100%;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
     // Create the custom element after script loads
     if (containerRef.current && !containerRef.current.querySelector('realscout-home-value')) {
       const widget = document.createElement('realscout-home-value');

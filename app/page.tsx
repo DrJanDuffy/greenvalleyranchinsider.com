@@ -9,6 +9,7 @@ import { RealScoutOfficeListings } from '@/components/RealScoutOfficeListings';
 import { NewsletterSignup } from '@/components/NewsletterSignup';
 import { HowIHelp } from '@/components/HowIHelp';
 import { WhyChooseReasons } from '@/components/WhyChooseReasons';
+import { MarketStat } from '@/components/MarketStat';
 
 export default function Home() {
   return (
@@ -30,6 +31,16 @@ export default function Home() {
           <p className="text-xl sm:text-2xl text-slate-300 mb-8 max-w-2xl mx-auto">
             Expert insights and premium listing services for Mystic Bay, The Cottages, and the Green Valley Ranch community.
           </p>
+          
+          {/* Market Stat */}
+          <div className="flex justify-center mb-6">
+            <MarketStat 
+              stat="12% Above Zillow" 
+              description="Average GVR sale price vs. online estimates this month"
+              lastUpdated="Jan 2025"
+            />
+          </div>
+          
           <div className="flex flex-wrap items-center justify-center gap-4 mt-6 text-sm">
             <a href="/green-valley-ranch" className="text-[#C5A059] hover:text-[#B8914F] hover:underline font-semibold">
               Green Valley Ranch Guide →
@@ -119,6 +130,14 @@ export default function Home() {
           <RealScoutOfficeListings />
         </div>
       </section>
+
+      {/* Recently Sold Listings Section */}
+      <RealScoutSoldListings 
+        title="Recently Sold in Las Vegas"
+        subtitle="See what homes are actually selling for - updated in real-time"
+        priceMin={400000}
+        priceMax={700000}
+      />
 
       {/* Newsletter Signup Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">

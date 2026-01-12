@@ -6,6 +6,7 @@ import { Toaster } from 'sonner';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { StructuredData } from '@/components/StructuredData';
+import { EnhancedSchema } from '@/components/EnhancedSchema';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import { SkipToContent } from '@/components/SkipToContent';
 import { ClientPerformance } from '@/components/ClientPerformance';
@@ -142,6 +143,7 @@ export default function RootLayout({
         <StructuredData type="WebSite" />
         <StructuredData type="RealEstateAgent" />
         <StructuredData type="LocalBusiness" />
+        <EnhancedSchema />
         <ClientPerformance />
         <SkipToContent />
         <Header />
