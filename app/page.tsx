@@ -53,7 +53,7 @@ export default function Home() {
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            A Henderson Home Just Sold for <span className="text-[#C5A059]">$688K</span> on Marywood Park
+            A Green Valley Henderson Home <span className="text-[#C5A059]">(around zip code 89044)</span> Just Sold for <span className="text-[#C5A059]">$688K</span> on Marywood Park
           </h1>
           
           <p className="text-xl sm:text-2xl text-slate-300 mb-8 max-w-2xl mx-auto">
