@@ -26,7 +26,9 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="relative bg-[#0F172A] text-white py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <Breadcrumbs items={[{ label: 'Contact' }]} />
+          <div className="mb-6 px-4">
+            <Breadcrumbs items={[{ name: 'Contact', href: '/contact' }]} />
+          </div>
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
               Get in Touch
