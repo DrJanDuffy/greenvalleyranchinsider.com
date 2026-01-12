@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Home, Users, Building, MapPin, Heart, TrendingUp, Shield } from 'lucide-react';
 import Link from 'next/link';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { RealScoutOfficeListings } from '@/components/RealScoutOfficeListings';
 
 export const metadata: Metadata = {
   title: 'The Cottages at Green Valley Ranch | Henderson NV | Green Valley Ranch Insider',
@@ -288,6 +289,21 @@ export default function TheCottagesPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Office Listings Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4">
+              Featured Listings
+            </h2>
+            <p className="text-lg text-slate-600">
+              Explore available properties in Henderson and Las Vegas
+            </p>
+          </div>
+          <RealScoutOfficeListings />
         </div>
       </section>
 

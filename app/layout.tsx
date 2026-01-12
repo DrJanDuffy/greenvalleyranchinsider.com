@@ -77,6 +77,10 @@ export default function RootLayout({
               --rs-ss-box-shadow: 0 10px 15px -3px #0000001a;
               --rs-ss-widget-width: 500px !important;
             }
+            realscout-office-listings {
+              --rs-listing-divider-color: #0e64c8;
+              width: 100%;
+            }
           `
         }} />
       </head>

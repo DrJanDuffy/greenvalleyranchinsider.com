@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { HelpCircle, ChevronDown } from 'lucide-react';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import Link from 'next/link';
+import { RealScoutOfficeListings } from '@/components/RealScoutOfficeListings';
 
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions | Green Valley Ranch Insider',
@@ -87,8 +88,23 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Office Listings Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4">
+              Featured Listings
+            </h2>
+            <p className="text-lg text-slate-600">
+              Explore available properties in Henderson and Las Vegas
+            </p>
+          </div>
+          <RealScoutOfficeListings />
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-[#0F172A] mb-4">
             Still Have Questions?
