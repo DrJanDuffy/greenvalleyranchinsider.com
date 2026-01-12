@@ -5,7 +5,6 @@ import './globals.css';
 import { Toaster } from 'sonner';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
-import { StructuredData } from '@/components/StructuredData';
 import { EnhancedSchema } from '@/components/EnhancedSchema';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import { SkipToContent } from '@/components/SkipToContent';
