@@ -69,28 +69,29 @@ export default function MysticBayPage() {
             { label: 'Mystic Bay' }
           ]} />
           <div className="text-center">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <Home className="w-8 h-8 text-[#C5A059]" />
-            <TrendingUp className="w-8 h-8 text-[#C5A059]" />
-            <Shield className="w-8 h-8 text-[#C5A059]" />
-          </div>
-          
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            <span className="text-[#C5A059]">Mystic Bay</span><br />
-            Henderson, Nevada
-          </h1>
-          
-          <p className="text-xl sm:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto">
-            {neighborhoodData.description}
-          </p>
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <Home className="w-8 h-8 text-[#C5A059]" />
+              <TrendingUp className="w-8 h-8 text-[#C5A059]" />
+              <Shield className="w-8 h-8 text-[#C5A059]" />
+            </div>
+            
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              <span className="text-[#C5A059]">Mystic Bay</span><br />
+              Henderson, Nevada
+            </h1>
+            
+            <p className="text-xl sm:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto">
+              {neighborhoodData.description}
+            </p>
 
-          <div className="mt-10">
-            <Link
-              href="/#valuation-form"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-[#C5A059] text-[#0F172A] rounded-lg hover:bg-[#B8914F] transition-colors shadow-lg hover:shadow-xl"
-            >
-              Get Your Home Valuation
-            </Link>
+            <div className="mt-10">
+              <Link
+                href="/#valuation-form"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-[#C5A059] text-[#0F172A] rounded-lg hover:bg-[#B8914F] transition-colors shadow-lg hover:shadow-xl"
+              >
+                Get Your Home Valuation
+              </Link>
+            </div>
           </div>
         </div>
       </section>
