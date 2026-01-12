@@ -210,9 +210,6 @@ export default function RootLayout({
             </Script>
           </>
         )}
-        <StructuredData type="WebSite" />
-        <StructuredData type="RealEstateAgent" />
-        <StructuredData type="LocalBusiness" />
         <EnhancedSchema />
         <ClientPerformance />
         <SkipToContent />

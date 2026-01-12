@@ -9,8 +9,6 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   // SEO: Generate static pages for better indexing
   output: 'standalone',
-  // Performance optimizations
-  swcMinify: true,
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
