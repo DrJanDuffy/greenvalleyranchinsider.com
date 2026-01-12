@@ -76,61 +76,94 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links - Organized by Category */}
           <div>
             <h3 className="text-xl font-bold mb-4 text-[#C5A059]">Quick Links</h3>
-            <div className="space-y-2">
-              <Link href="/green-valley-ranch" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
-                Green Valley Ranch
-              </Link>
-              <Link href="/mystic-bay" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
-                Mystic Bay
-              </Link>
-              <Link href="/the-cottages" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
-                The Cottages
-              </Link>
-              <Link href="/services" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
-                Services
-              </Link>
-              <Link href="/about" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
-                About
-              </Link>
-              <Link href="/resources" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
-                Resources
-              </Link>
-              <Link href="/market-insights" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
-                Market Insights
-              </Link>
-              <Link href="/schools" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
-                Schools
-              </Link>
-              <Link href="/testimonials" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
-                Testimonials
-              </Link>
-              <Link href="/faq" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
-                FAQ
-              </Link>
-              <Link href="/contact" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
-                Contact
-              </Link>
-              <Link href="/neighborhoods" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
-                Neighborhoods
-              </Link>
-              <Link href="/investment-guide" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
-                Investment Guide
-              </Link>
-              <Link href="/area-guide" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
-                Area Guide
-              </Link>
-              <Link href="/moving-guide" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
-                Moving Guide
-              </Link>
-              <Link href="/financing-guide" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
-                Financing Guide
-              </Link>
-              <Link href="/home-staging" className="block text-slate-300 hover:text-[#C5A059] transition-colors">
-                Home Staging
-              </Link>
+            <div className="space-y-4">
+              {/* Neighborhoods */}
+              <div>
+                <h4 className="text-sm font-semibold text-[#C5A059] mb-2">Neighborhoods</h4>
+                <div className="space-y-1">
+                  <Link href="/green-valley-ranch" className="block text-slate-300 hover:text-[#C5A059] transition-colors text-sm">
+                    Green Valley Ranch
+                  </Link>
+                  <Link href="/mystic-bay" className="block text-slate-300 hover:text-[#C5A059] transition-colors text-sm">
+                    Mystic Bay
+                  </Link>
+                  <Link href="/the-cottages" className="block text-slate-300 hover:text-[#C5A059] transition-colors text-sm">
+                    The Cottages
+                  </Link>
+                  <Link href="/neighborhoods" className="block text-slate-300 hover:text-[#C5A059] transition-colors text-sm">
+                    All Neighborhoods
+                  </Link>
+                </div>
+              </div>
+              
+              {/* Services & Resources */}
+              <div>
+                <h4 className="text-sm font-semibold text-[#C5A059] mb-2">Services & Resources</h4>
+                <div className="space-y-1">
+                  <Link href="/services" className="block text-slate-300 hover:text-[#C5A059] transition-colors text-sm">
+                    Services
+                  </Link>
+                  <Link href="/resources" className="block text-slate-300 hover:text-[#C5A059] transition-colors text-sm">
+                    Resources
+                  </Link>
+                  <Link href="/market-insights" className="block text-slate-300 hover:text-[#C5A059] transition-colors text-sm">
+                    Market Insights
+                  </Link>
+                  <Link href="/schools" className="block text-slate-300 hover:text-[#C5A059] transition-colors text-sm">
+                    Schools
+                  </Link>
+                </div>
+              </div>
+              
+              {/* Guides */}
+              <div>
+                <h4 className="text-sm font-semibold text-[#C5A059] mb-2">Guides</h4>
+                <div className="space-y-1">
+                  <Link href="/buyers-guide" className="block text-slate-300 hover:text-[#C5A059] transition-colors text-sm">
+                    Buyer&apos;s Guide
+                  </Link>
+                  <Link href="/sellers-guide" className="block text-slate-300 hover:text-[#C5A059] transition-colors text-sm">
+                    Seller&apos;s Guide
+                  </Link>
+                  <Link href="/investment-guide" className="block text-slate-300 hover:text-[#C5A059] transition-colors text-sm">
+                    Investment Guide
+                  </Link>
+                  <Link href="/area-guide" className="block text-slate-300 hover:text-[#C5A059] transition-colors text-sm">
+                    Area Guide
+                  </Link>
+                  <Link href="/moving-guide" className="block text-slate-300 hover:text-[#C5A059] transition-colors text-sm">
+                    Moving Guide
+                  </Link>
+                  <Link href="/financing-guide" className="block text-slate-300 hover:text-[#C5A059] transition-colors text-sm">
+                    Financing Guide
+                  </Link>
+                  <Link href="/home-staging" className="block text-slate-300 hover:text-[#C5A059] transition-colors text-sm">
+                    Home Staging
+                  </Link>
+                </div>
+              </div>
+              
+              {/* About & Contact */}
+              <div>
+                <h4 className="text-sm font-semibold text-[#C5A059] mb-2">About & Contact</h4>
+                <div className="space-y-1">
+                  <Link href="/about" className="block text-slate-300 hover:text-[#C5A059] transition-colors text-sm">
+                    About
+                  </Link>
+                  <Link href="/testimonials" className="block text-slate-300 hover:text-[#C5A059] transition-colors text-sm">
+                    Testimonials
+                  </Link>
+                  <Link href="/contact" className="block text-slate-300 hover:text-[#C5A059] transition-colors text-sm">
+                    Contact
+                  </Link>
+                  <Link href="/faq" className="block text-slate-300 hover:text-[#C5A059] transition-colors text-sm">
+                    FAQ
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -207,6 +240,10 @@ export function Footer() {
             360 Mike Koizumi Way, Henderson, NV 89011
           </p>
           <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs">
+            <Link href="/sitemap.xml" className="text-slate-400 hover:text-[#C5A059] transition-colors">
+              Sitemap
+            </Link>
+            <span className="text-slate-600">|</span>
             <Link href="/privacy" className="text-slate-400 hover:text-[#C5A059] transition-colors">
               Privacy Policy
             </Link>
